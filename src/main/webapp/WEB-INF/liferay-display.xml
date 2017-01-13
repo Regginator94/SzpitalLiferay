@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+ <display>
+ 	<category name="Szpital">
+ 		<portlet id="sample" />
+ 		<portlet id="lista-pacjentow" />
+ 	</category>
+ </display>

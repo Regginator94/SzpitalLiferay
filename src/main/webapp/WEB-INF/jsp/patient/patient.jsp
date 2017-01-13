@@ -1,0 +1,89 @@
+<%@include file="/WEB-INF/jsp/header.jsp"%>
+<!--  <title>Lista pacjentow</title> -->
+<%@include file="/WEB-INF/jsp/header2.jsp"%>
+
+	<!--<div class="container" align="center">
+	 <div class="row">
+	 	<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8" >
+			<p>Tu na razie jest sciernisko...<br>
+			ale bedzie zegar</p>
+		</div>
+		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" align="right">
+			<p>A tam, gdzie to kretowisko...<br>
+			beda notyfikacje</p>
+		</div> 
+		
+	</div>-->
+<!-- 	<h1>Lista Pacjentów</h1>  -->
+	
+	<!--<div class="row"> 
+		<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+			
+			<ul class="list-inline">
+				<li><a href="#" class="list-group-item home"></a></li>
+				<li><a href="#" class="list-group-item patient"></a></li>
+				<li><a href="#" class="list-group-item archive"></a></li>
+				<li><a href="#" class="list-group-item report"></a></li>
+				<li><a href="#" class="list-group-item pharmacy"></a></li>
+			</ul>
+		</div>  -->
+
+	<div> <!-- class="col-md-10 col-lg-10 col-sm-12 col-xs-12" -->
+	
+	<!--  	<div class="row" align="left">
+			<ol class="breadcrumb" >
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Cos</a></li>
+				<li class="active">Lista Pacjentów</li>
+			</ol>
+		</div>   -->
+
+		<div>
+			<table id="sort" class="table table-striped table-bordered">	
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Imie</th>
+						<th>Nazwisko</th> 
+						<th>Data urodzenia</th>
+						<th>PESEL</th>
+						<th>Numer telefonu</th>
+						<th></th>
+					</tr>
+				</thead>
+					<tbody>
+						<c:forEach items="${patientShortInfoList}" var="shortInfo">
+							<tr>
+								<td>${shortInfo.id}</td>
+								<td>${shortInfo.name}</td>
+								<td>${shortInfo.surname}</td>
+								<td>${shortInfo.bornDate}</td>					
+								<td>${shortInfo.idNumber}</td>	
+								<td>${shortInfo.phoneNumber}</td> 	
+								<portlet:actionURL var="WidokSzczegolowy">
+												<portlet:param name="action" value="detailsView" />
+												<portlet:param name="id" value="${shortInfo.id}" />
+								</portlet:actionURL>	
+								<td><button type="button" class="close" data-dismiss="alert" href="${WidokSzczegolowy}">Widok</button></td>			
+							</tr>
+						</c:forEach>
+					</tbody>
+			</table> 
+			
+		</div>
+		
+	<!--	<div class="row">
+	  	<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8" align="left">
+			<p>buttoniki</p>
+		</div> 
+		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" align="right">
+			<p>1 / 8</p>
+		</div>
+
+		</div> -->
+	</div> 
+	</div>
+	
+
+	
+<%@include file="/WEB-INF/jsp/footer.jsp"%>
