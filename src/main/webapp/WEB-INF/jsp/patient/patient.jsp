@@ -1,6 +1,12 @@
 <%@include file="/WEB-INF/jsp/header.jsp"%>
 <!--  <title>Lista pacjentow</title> -->
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){   
+	$('#sort').tablesorter(); 	
+});
+</script>
 
 	<!--<div class="container" align="center">
 	 <div class="row">
@@ -39,7 +45,7 @@
 		</div>   -->
 
 		<div>
-			<table id="sort" class="table table-striped table-bordered">	
+			<table id="sort" class="table table-striped table-bordered tablesorter">	
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -64,7 +70,7 @@
 												<portlet:param name="action" value="detailsView" />
 												<portlet:param name="id" value="${shortInfo.id}" />
 								</portlet:actionURL>	
-								<td><button type="button" class="close" data-dismiss="alert" href="${WidokSzczegolowy}">Widok</button></td>			
+								<td><button type="button" class="close" data-dismiss="alert" href="${WidokSzczegolowy}">Widok</button></td>			 
 							</tr>
 						</c:forEach>
 					</tbody>

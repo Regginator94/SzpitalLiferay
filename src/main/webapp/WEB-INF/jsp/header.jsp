@@ -22,32 +22,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" type="text/css" media="screen"
-	href="webapp/static/css/ui-lightness/jquery-ui.css" />
+	href="<%=request.getContextPath()%>/static/css/ui-lightness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" media="screen"
-	href="webapp/static/css/ui.jqgrid.css" />
+	href="<%=request.getContextPath()%>/static/css/ui.jqgrid.css" />
+<%-- <link rel="stylesheet" type="text/css" media="screen"
+	href="<%=request.getContextPath()%>/static/css/ui.jqgrid-bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="screen"
-	href="webapp/static/css/ui.jqgrid-bootstrap.css" />
-<link rel="stylesheet" type="text/css" media="screen"
-	href="webapp/static/css/ui.jqgrid-bootstrap-ui.css" />
-<link href="webapp/static/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-<link href="webapp/static/css/menu.css"
+	href="<%=request.getContextPath()%>/static/css/ui.jqgrid-bootstrap-ui.css" />
+<link href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap.min.css" 
 	rel="stylesheet">
 <link
-	href="webapp/static/bootstrap/css/bootstrap-datepicker.css"
+	href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap-datepicker.css"
 	media="screen" rel="stylesheet">
+	--%>
+<link href="<%=request.getContextPath()%>/static/css/menu.css"
+	rel="stylesheet">
+
 <link
-	href="webapp/static/css/tablesorter.css"
+	href="<%=request.getContextPath()%>/static/css/tablesorter.css"
 	media="screen" rel="stylesheet">
 
-<script src="webapp/static/js/jquery-3.1.1.min.js"
+<script src="<%=request.getContextPath()%>/static/js/jquery-1.11.0.min.js"
 	type="text/javascript"></script>
-<script src="webapp/static/js/i18n/grid.locale-pl.js"
+<script src="<%=request.getContextPath()%>/static/js/i18n/grid.locale-pl.js"
 	type="text/javascript"></script>
-<script src="webapp/static/js/jquery.jqGrid.min.js"
+<script src="<%=request.getContextPath()%>/static/js/jquery.jqGrid.min.js"
 	type="text/javascript"></script>
-<script src="webapp/static/bootstrap/js/bootstrap.min.js"></script>
+<%-- <script src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/ecmascript"
-	src="webapp/static/bootstrap/js/bootstrap-datepicker.js"></script>
+	src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap-datepicker.js"></script>
 <script type="text/ecmascript"
-	src="webapp/static/bootstrap/js/bootstrap3-typeahead.js"></script>
+	src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap3-typeahead.js"></script>
+ --%>

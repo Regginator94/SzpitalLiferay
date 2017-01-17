@@ -6,5 +6,17 @@
 	</portlet>
 	<portlet>
 		<portlet-name>lista-pacjentow</portlet-name>
+		<!--
+		TAK POWINNO TO WYGLADAC, WCZYTUJE POPRAWNIE ALE Z JAKIEGOS POWODU NIE DZIALA ;( 
+		 <footer-portlet-javascript>/static/js/jquery-1.11.0.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/static/js/i18n/grid.locale-pl.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/static/js/jquery.jqGrid.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/static/bootstrap/js/bootstrap.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/static/bootstrap/js/bootstrap-datepicker.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/static/bootstrap/js/bootstrap3-typeahead.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js</footer-portlet-javascript> -->
+	
 	</portlet>
+
+	
 </liferay-portlet-app>
