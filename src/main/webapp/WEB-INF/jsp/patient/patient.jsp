@@ -8,6 +8,12 @@ $(document).ready(function(){
 });
 </script>
 
+<portlet:renderURL var="showPatientFormURL">
+    <portlet:param name="action" value="showPatientForm"/>
+</portlet:renderURL>
+<portlet:renderURL var="showDischargedPatientFormURL">
+    <portlet:param name="action" value="showDischargedPatientForm"/>
+</portlet:renderURL>
 	<!--<div class="container" align="center">
 	 <div class="row">
 	 	<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8" >
@@ -75,7 +81,8 @@ $(document).ready(function(){
 						</c:forEach>
 					</tbody>
 			</table> 
-			
+			<p><a href="${showPatientFormURL}">Rejestracja pacjenta</a></p>
+			<p><a href="${showDischargedPatientFormURL}">Wypis pacjenta</a></p>
 		</div>
 		
 	<!--	<div class="row">

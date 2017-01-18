@@ -3,9 +3,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>Tabela pacjentow</title>
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
-	<div class="container" align="center">
-		<h2>Wypis pacjenta</h2>
-		<form:form method="post" commandName="dischargedPatientForm" action="dischargePatientSubmitted">
+<portlet:actionURL var="showDischargedPatientFormSubmittedURL">
+    <portlet:param name="action" value="showDischargedPatientFormSubmitted"/>
+</portlet:actionURL>
+	<div></div> <!--class="container" align="center">
+		<h2>Wypis pacjenta</h2>-->
+		<form:form method="post" commandName="dischargedPatientForm" action="${showDischargedPatientFormSubmittedURL}">
 		<table class="table table-condensed">
 		    <tr>
 		        <td><form:label path="patientShortInfoId">Wybierz pacjenta</form:label></td>

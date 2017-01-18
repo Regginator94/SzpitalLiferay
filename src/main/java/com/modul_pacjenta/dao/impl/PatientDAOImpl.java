@@ -44,7 +44,7 @@ public class PatientDAOImpl implements PatientDAOInterface{
 	//TO DO poprawic zapytanie oraz dostosowa� konstruktor do zapytania po utworzeniu tabeli w BD
 	public PatientShortInfo getPatientShortInfo(int id) throws DataAccessException {
 		PatientShortInfo patient = jdbcTemplate.queryForObject("SELECT id, name, second_name, surname, "
-				+ "born_date, id_number, sex, phone_number, nationality, insurance_number FROM patient WHERE id=?",
+				+ "born_date, id_number, sex, phone_number, nationality, insurance_number FROM patient WHERE id=? AND discharged=false",
 				new RowMapper<PatientShortInfo>(){
 			public PatientShortInfo mapRow(ResultSet rs, int rowNumber)
 					throws SQLException {
@@ -72,7 +72,7 @@ public class PatientDAOImpl implements PatientDAOInterface{
 	public List<PatientShortInfo> getPatientShortInfo()
 			throws DataAccessException {	
 		return jdbcTemplate.query("SELECT id, name, second_name, surname, born_date, id_number, "
-				+ "sex, phone_number, nationality, insurance_number FROM patient",				
+				+ "sex, phone_number, nationality, insurance_number FROM patient WHERE discharged=false",				
 				new RowMapper<PatientShortInfo>(){
 
 			public PatientShortInfo mapRow(ResultSet rs, int rowNum)

@@ -3,6 +3,7 @@
 <liferay-portlet-app>
 	<portlet>
 		<portlet-name>sample</portlet-name>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
 	</portlet>
 	<portlet>
 		<portlet-name>lista-pacjentow</portlet-name>
@@ -15,7 +16,7 @@
 		<footer-portlet-javascript>/static/bootstrap/js/bootstrap-datepicker.js</footer-portlet-javascript>
 		<footer-portlet-javascript>/static/bootstrap/js/bootstrap3-typeahead.js</footer-portlet-javascript>
 		<footer-portlet-javascript>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js</footer-portlet-javascript> -->
-	
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
 	</portlet>
 
 	
