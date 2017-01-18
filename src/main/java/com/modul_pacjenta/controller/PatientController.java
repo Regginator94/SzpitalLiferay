@@ -1,16 +1,21 @@
 package com.modul_pacjenta.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +26,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -42,8 +48,13 @@ public class PatientController {
 	private PatientFormValidator patientFormValidator;
 
 	@InitBinder("patientForm")
-	protected void initPatientFormBinder(WebDataBinder binder) {
-		binder.setValidator(patientFormValidator);
+	protected void initBinder(WebDataBinder binder) {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    dateFormat.setLenient(false);
+
+	    // true passed to CustomDateEditor constructor means convert empty String to null
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	    binder.setValidator(patientFormValidator);
 	}
 	
     @RenderMapping
@@ -77,24 +88,28 @@ public class PatientController {
 	}
 	
 //	@RequestMapping(value = "/addPatient", method = RequestMethod.GET)
-    public String showPatientForm(Model model) {
+    @RenderMapping(params = "action=showPatientForm")
+    public String showPatientForm(RenderRequest request, RenderResponse response, Model model) {
         PatientShortInfo patientForm = new PatientShortInfo();    
         model.addAttribute("patientForm", patientForm);
         return "newPatient";
     }
 	
 //	@RequestMapping(value = "/addPatient", method = RequestMethod.POST)
-	public String showPatientFormSubmitted(Model model, @ModelAttribute("patientForm") @Validated PatientShortInfo patientForm, BindingResult result) {
-		if (result.hasErrors()) {
-			return "newPatient";
+    @ActionMapping(params = "action=showPatientFormSubmitted") 
+	public void showPatientFormSubmitted(ActionRequest request, ActionResponse response, @ModelAttribute("patientForm") @Validated PatientShortInfo patientForm, BindingResult result, Model model) {
+    	if (result.hasErrors()) {
+    		response.setRenderParameter("action","showPatientForm");
+    		return;
 		}
 		dao.insertPatientShortInfo(patientForm);
 		dao.insertPatientRegistrationDetails(patientForm);
-		return "newPatientAdded";
+		response.setRenderParameter("","");
 	}
 	
 	//@RequestMapping(value = "/dischargePatient", method = RequestMethod.GET)
-    public String showDischargedPatientForm(Model model) {
+    @RenderMapping(params = "action=showDischargedPatientForm")
+    public String showDischargedPatientForm(RenderRequest request, RenderResponse response, Model model) {
 		List<PatientShortInfo> patientShortInfoList = new LinkedList<PatientShortInfo>();
 		patientShortInfoList = dao.getPatientShortInfo();
 		Map<Integer,String> patientIdList = new LinkedHashMap<Integer,String>();
@@ -114,16 +129,17 @@ public class PatientController {
     }
 	
 	//@RequestMapping(value = "/dischargePatientSubmitted", method = RequestMethod.POST)
-	public String showDischargedPatientFormSubmitted(Model model, DischargedPatient dischargedPatientForm, BindingResult result) {
+    @ActionMapping(params = "action=showDischargedPatientFormSubmitted") 
+	public void showDischargedPatientFormSubmitted(ActionRequest request, ActionResponse response, Model model, DischargedPatient dischargedPatientForm, BindingResult result) {
 		model.addAttribute("dischargedPatientForm", dischargedPatientForm);
 		int dischargedPatientFormId = dischargedPatientForm.getPatientShortInfoId();
 		dao.updatePatientIfDischarged(dischargedPatientFormId);
 		dao.insertPatientDischargeDetails(dischargedPatientForm);
-		return "dischargePatientSubmitted";
+		response.setRenderParameter("","");
 	}
 	
-	@RequestMapping(params = "action =  detailsView")
-	public ModelAndView detailsView(RenderRequest request, RenderResponse response, Model model,
+	@ActionMapping(params = "action =  detailsView")
+	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
 			@RequestParam(value = "id") int id) {
 		
 		System.out.println("czy wjesz³o?");
