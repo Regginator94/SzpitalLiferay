@@ -17,6 +17,8 @@
 		<footer-portlet-javascript>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js</footer-portlet-javascript> -->
 	
 	</portlet>
-
+	<portlet>
+		<portlet-name>lista-zadan</portlet-name>
+	</portlet>
 	
 </liferay-portlet-app>

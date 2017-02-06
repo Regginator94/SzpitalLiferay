@@ -25,17 +25,19 @@
 	href="<%=request.getContextPath()%>/static/css/ui-lightness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" media="screen"
 	href="<%=request.getContextPath()%>/static/css/ui.jqgrid.css" />
-<%-- <link rel="stylesheet" type="text/css" media="screen"
+ <link rel="stylesheet" type="text/css" media="screen"
 	href="<%=request.getContextPath()%>/static/css/ui.jqgrid-bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="screen"
 	href="<%=request.getContextPath()%>/static/css/ui.jqgrid-bootstrap-ui.css" />
-<link href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap.min.css" 
-	rel="stylesheet">
+<%--<link href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap.min.css" 
+	rel="stylesheet">--%>
 <link
 	href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap-datepicker.css"
 	media="screen" rel="stylesheet">
-	--%>
+	
 <link href="<%=request.getContextPath()%>/static/css/menu.css"
+	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/static/css/todo.css"
 	rel="stylesheet">
 
 <link
@@ -44,13 +46,16 @@
 
 <script src="<%=request.getContextPath()%>/static/js/jquery-1.11.0.min.js"
 	type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/static/js/jquery.ui.min.js"
+	type="text/javascript"></script>
 <script src="<%=request.getContextPath()%>/static/js/i18n/grid.locale-pl.js"
 	type="text/javascript"></script>
 <script src="<%=request.getContextPath()%>/static/js/jquery.jqGrid.min.js"
 	type="text/javascript"></script>
-<%-- <script src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/ecmascript"
+<%--  <script src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap.min.js"></script>
+ --%>
+ <script type="text/ecmascript"
 	src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap-datepicker.js"></script>
-<script type="text/ecmascript"
+<%-- <script type="text/ecmascript"
 	src="<%=request.getContextPath()%>/static/bootstrap/js/bootstrap3-typeahead.js"></script>
  --%>

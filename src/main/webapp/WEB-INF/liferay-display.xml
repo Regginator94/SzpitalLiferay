@@ -3,5 +3,6 @@
  	<category name="Szpital">
  		<portlet id="sample" />
  		<portlet id="lista-pacjentow" />
+ 		<portlet id="lista-zadan" />
  	</category>
  </display>

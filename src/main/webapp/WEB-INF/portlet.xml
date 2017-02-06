@@ -16,7 +16,7 @@
 			<title>Sample Spring Portlet</title>
 		</portlet-info>
 	</portlet>
-		<portlet>
+	<portlet>
 		<portlet-name>lista-pacjentow</portlet-name>
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<init-param>
@@ -29,6 +29,21 @@
 		</supports>
 		<portlet-info>
 			<title>Lista Pacjentow</title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<portlet-name>lista-zadan</portlet-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/task-servlet.xml</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Lista Zadan</title>
 		</portlet-info>
 	</portlet>
 </portlet-app>
