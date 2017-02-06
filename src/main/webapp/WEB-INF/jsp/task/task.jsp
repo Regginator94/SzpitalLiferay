@@ -41,9 +41,9 @@
 			<div class="task-container">
                 	<div class="task-list">
                 		<h3>Zadania</h3>
-	                	<div class="task-status" id="pending"></div>
-	             		<div class="task-status" id="inProgress">_____________________</div>
-						<div class="task-status" id="completed">_____________________</div>
+	                	<div class="task-status" id="pending" style="min-height: 75px">_____________________</div>
+	             		<div class="task-status" id="inProgress" style="min-height: 75px">_____________________</div>
+						<div class="task-status" id="completed" style="min-height: 75px">_____________________</div>
 					</div>
 			</div>
         
