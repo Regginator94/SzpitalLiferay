@@ -22,5 +22,11 @@
 	<portlet>
 		<portlet-name>lista-zadan</portlet-name>
 	</portlet>
+	<portlet>
+		<portlet-name>raport</portlet-name>
+	</portlet>
+	<portlet>
+		<portlet-name>registration</portlet-name>
+	</portlet>
 	
 </liferay-portlet-app>

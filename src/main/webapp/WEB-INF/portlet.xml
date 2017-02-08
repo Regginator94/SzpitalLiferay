@@ -46,4 +46,34 @@
 			<title>Lista Zadan</title>
 		</portlet-info>
 	</portlet>
+	<portlet>
+		<portlet-name>raport</portlet-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/raport-servlet.xml</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Raprot Pielegniarki</title>
+		</portlet-info>
+	</portlet>
+		<portlet>
+		<portlet-name>registration</portlet-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/registration-servlet.xml</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Rejestracja Pacjenta</title>
+		</portlet-info>
+	</portlet>
 </portlet-app>

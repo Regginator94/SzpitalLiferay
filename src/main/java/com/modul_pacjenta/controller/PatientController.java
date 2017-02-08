@@ -2,7 +2,6 @@ package com.modul_pacjenta.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +14,6 @@ import javax.portlet.RenderResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,7 +21,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
@@ -33,7 +30,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.modul_pacjenta.dao.impl.PatientDAOImpl;
 import com.modul_pacjenta.model.DischargedPatient;
 import com.modul_pacjenta.model.PatientShortInfo;
-import com.modul_pacjenta.validator.PatientFormValidator;
 import com.modules.ModelAndViewUtils;
 
 @Controller
@@ -44,17 +40,10 @@ public class PatientController {
 	@Qualifier("PatientDAO")
 	private PatientDAOImpl  dao;
 	
-	@Autowired
-	private PatientFormValidator patientFormValidator;
-
 	@InitBinder("patientForm")
 	protected void initBinder(WebDataBinder binder) {
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	    dateFormat.setLenient(false);
-
-	    // true passed to CustomDateEditor constructor means convert empty String to null
-	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
-	    binder.setValidator(patientFormValidator);
 	}
 	
     @RenderMapping
