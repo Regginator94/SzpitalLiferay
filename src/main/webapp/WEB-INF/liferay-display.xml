@@ -4,6 +4,11 @@
  		<portlet id="sample" />
  		<portlet id="lista-pacjentow" />
  		<portlet id="lista-zadan" />
+<<<<<<< HEAD
  		<portlet id="menu" />
+=======
+ 		<portlet id="raport" />
+ 		<portlet id="registration" />
+>>>>>>> master
  	</category>
  </display>

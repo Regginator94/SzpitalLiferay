@@ -8,49 +8,13 @@ $(document).ready(function(){
 });
 </script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/searchbar.js"></script>
-	
 <portlet:renderURL var="showPatientFormURL">
     <portlet:param name="action" value="showPatientForm"/>
 </portlet:renderURL>
 <portlet:renderURL var="showDischargedPatientFormURL">
     <portlet:param name="action" value="showDischargedPatientForm"/>
 </portlet:renderURL>
-	<!--<div class="container" align="center">
-	 <div class="row">
-	 	<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8" >
-			<p>Tu na razie jest sciernisko...<br>
-			ale bedzie zegar</p>
-		</div>
-		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" align="right">
-			<p>A tam, gdzie to kretowisko...<br>
-			beda notyfikacje</p>
-		</div> 
-		
-	</div>-->
-<!-- 	<h1>Lista Pacjentów</h1>  -->
-	
-	<!--<div class="row"> 
-		<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
-			
-			<ul class="list-inline">
-				<li><a href="#" class="list-group-item home"></a></li>
-				<li><a href="#" class="list-group-item patient"></a></li>
-				<li><a href="#" class="list-group-item archive"></a></li>
-				<li><a href="#" class="list-group-item report"></a></li>
-				<li><a href="#" class="list-group-item pharmacy"></a></li>
-			</ul>
-		</div>  -->
-
-	<div> <!-- class="col-md-10 col-lg-10 col-sm-12 col-xs-12" -->
-	
-	<!--  	<div class="row" align="left">
-			<ol class="breadcrumb" >
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Cos</a></li>
-				<li class="active">Lista Pacjentów</li>
-			</ol>
-		</div>   -->
-
+	<div> 
 		<div>
 			<input type="text" id="szukaj_osoby" placeholder="Szukaj pacjenta...">
 			<table id="sort" class="table table-striped table-bordered tablesorter">	
@@ -86,19 +50,6 @@ $(document).ready(function(){
 			<p><a href="${showPatientFormURL}">Rejestracja pacjenta</a></p>
 			<p><a href="${showDischargedPatientFormURL}">Wypis pacjenta</a></p>
 		</div>
-		
-	<!--	<div class="row">
-	  	<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8" align="left">
-			<p>buttoniki</p>
-		</div> 
-		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" align="right">
-			<p>1 / 8</p>
-		</div>
-
-		</div> -->
 	</div> 
-
-	
-
 	
 <%@include file="/WEB-INF/jsp/footer.jsp"%>
