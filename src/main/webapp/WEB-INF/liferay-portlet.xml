@@ -22,12 +22,15 @@
 	<portlet>
 		<portlet-name>lista-zadan</portlet-name>
 	</portlet>
-	<portlet>
+ 	<portlet>
 		<portlet-name>raport</portlet-name>
 	</portlet>
 	<portlet>
 		<portlet-name>registration</portlet-name>
 		<requires-namespaced-parameters>false</requires-namespaced-parameters>
 	</portlet>
+	<portlet>
+		<portlet-name>menu</portlet-name>
+ 	</portlet>
 	
 </liferay-portlet-app>
