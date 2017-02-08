@@ -4,5 +4,6 @@
  		<portlet id="sample" />
  		<portlet id="lista-pacjentow" />
  		<portlet id="lista-zadan" />
+ 		<portlet id="menu" />
  	</category>
  </display>

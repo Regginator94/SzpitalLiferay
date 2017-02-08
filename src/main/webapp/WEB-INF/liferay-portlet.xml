@@ -22,5 +22,8 @@
 	<portlet>
 		<portlet-name>lista-zadan</portlet-name>
 	</portlet>
+	<portlet>
+		<portlet-name>menu</portlet-name>
+	</portlet>
 	
 </liferay-portlet-app>
