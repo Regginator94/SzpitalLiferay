@@ -138,17 +138,13 @@ public class PatientController {
 		response.setRenderParameter("","");
 	}
 	
-	@ActionMapping(params = "action =  detailsView")
-	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
-			@RequestParam(value = "id") int id) {
-		
-		System.out.println("czy wjesz³o?");
-		ModelAndView modelAndView = ModelAndViewUtils
-				.createModelAndView("details");
-		PatientShortInfo patientShortInfo = dao.getPatientShortInfo(id);
-		modelAndView.addObject("patientShortInfo", patientShortInfo);
+    @RenderMapping(params = "action=detailsView")
+	public String detailsView(RenderRequest request, RenderResponse response, Model model, @RequestParam(value = "id") int id) {
 
-		return modelAndView;
+		PatientShortInfo patientShortInfo = dao.getPatientShortInfo(id);
+		model.addAttribute("patientShortInfo", patientShortInfo);
+
+		return "details";
 	}
 	
 }

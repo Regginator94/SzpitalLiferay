@@ -80,7 +80,6 @@ public class PatientDAOImpl implements PatientDAOInterface{
 				PatientShortInfo patient = new PatientShortInfo(rs.getInt(1), rs.getString(2), rs.getString(3), 
 						rs.getString(4), rs.getDate(5), rs.getLong(6), rs.getString(7),
 						rs.getString(8), rs.getString(9), rs.getInt(10));
-				System.out.println(patient);
 				return patient ;
 			}			
 		});
