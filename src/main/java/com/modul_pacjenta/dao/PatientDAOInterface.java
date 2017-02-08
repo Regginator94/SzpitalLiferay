@@ -25,4 +25,7 @@ public interface PatientDAOInterface {
 	
 	public void insertPatientDischargeDetails(DischargedPatient patient)
 			throws DataAccessException;
+	
+	public void updatePatientIfModified(PatientShortInfo patient, int id)
+			throws DataAccessException;
 }

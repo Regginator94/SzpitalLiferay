@@ -137,7 +137,28 @@ public class PatientController {
 		dao.insertPatientDischargeDetails(dischargedPatientForm);
 		response.setRenderParameter("","");
 	}
+    
+    @RenderMapping(params = "action=showUpdatedPatientForm")
+    public String showUpdatedPatientForm(RenderRequest request, RenderResponse response, Model model,
+			@RequestParam(value = "id") int id) {
+    	
+    	PatientShortInfo currentPatientShortInfo = dao.getPatientShortInfo(id);
+    	model.addAttribute("currentPatientShortInfo", currentPatientShortInfo);
+    	PatientShortInfo patientForm = new PatientShortInfo();    
+        model.addAttribute("patientForm", patientForm);
+        
+        return "updatePatient";
+    }
 	
+    @ActionMapping(params = "action=showUpdatedPatientFormSubmitted") 
+	public void showUpdatedPatientFormSubmitted(ActionRequest request, ActionResponse response, @ModelAttribute("patientForm") @Validated PatientShortInfo patientForm, BindingResult result, Model model) {
+    	model.addAttribute("patientForm", patientForm);
+		int updatedPatientFormId = patientForm.getId();
+		dao.updatePatientIfModified(patientForm, updatedPatientFormId);
+		//info o update?
+		response.setRenderParameter("","");
+	}
+    
 	@ActionMapping(params = "action =  detailsView")
 	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
 			@RequestParam(value = "id") int id) {
