@@ -7,7 +7,8 @@ $(document).ready(function(){
 	$('#sort').tablesorter(); 	
 });
 </script>
-
+<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/searchbar.js"></script>
+	
 <portlet:renderURL var="showPatientFormURL">
     <portlet:param name="action" value="showPatientForm"/>
 </portlet:renderURL>
@@ -51,6 +52,7 @@ $(document).ready(function(){
 		</div>   -->
 
 		<div>
+			<input type="text" id="szukaj_osoby" placeholder="Szukaj pacjenta...">
 			<table id="sort" class="table table-striped table-bordered tablesorter">	
 				<thead>
 					<tr>

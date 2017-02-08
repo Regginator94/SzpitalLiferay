@@ -12,7 +12,7 @@
 		<table class="table table-condensed">
 		    <tr>
 		        <td><form:label path="id">ID</form:label></td>
-		        <td><form:input path="id" value="${currentPatientShortInfo.id}" /></td>
+		        <td><form:input path="id" value="${currentPatientShortInfo.id}" readonly="true" /></td>
 		    </tr>
 		    <tr>
 		        <td><form:label path="name">Imie</form:label></td>
