@@ -1,44 +1,55 @@
 .patient {
 	background: url(../img/drip-patient-pictogram.svg) no-repeat;
-	width: 120px;
-	height: 120px;
-	background-size: 100px 100px;
+	width: 25vh;
+	height: 25vh;
+	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }
 
+.outer {
+	width: 100%;
+	min-height: 500px;
+	
+}
+.inner {
+    margin: 0 auto; 
+    min-height: 500px;
+    
+}
+
 .home {
-	background: url(../img/Vista-folder_home.svg) no-repeat;
-	width: 120px;
-	height: 120px;
-	background-size: 100px 100px;
+	background: url(../img/Vista-folder_home.svg.png) no-repeat;
+	width: 25vh;
+	height: 25vh;
+	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }
 
 .archive {
 	background: url(../img/archive-icon-12.png) no-repeat;
-	height: 120px;
-	width: 120px;
-	background-size: 100px 100px;
+	width: 25vh;
+	height: 25vh;
+	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }
 
 .report {
 	background: url(../img/task_report_regular.png) no-repeat;
-	height: 120px;
-	width: 120px;
-	background-size: 100px 100px;
+	width: 25vh;
+	height: 25vh;
+	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }
 
 .pharmacy {
 	background: url(../img/Blue-Pharmacy-logo.svg) no-repeat;
-	height: 120px;
-	width: 120px;
-	background-size: 100px 100px;
+	width: 25vh;
+	height: 25vh;
+	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }

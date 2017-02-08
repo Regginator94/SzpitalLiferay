@@ -4,7 +4,6 @@
  		<portlet id="sample" />
  		<portlet id="lista-pacjentow" />
  		<portlet id="lista-zadan" />
- 		<portlet id="raport" />
- 		<portlet id="registration" />
+ 		<portlet id="menu" />
  	</category>
  </display>
