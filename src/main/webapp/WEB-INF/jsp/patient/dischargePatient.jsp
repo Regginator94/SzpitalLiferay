@@ -6,8 +6,8 @@
 <portlet:actionURL var="showDischargedPatientFormSubmittedURL">
     <portlet:param name="action" value="showDischargedPatientFormSubmitted"/>
 </portlet:actionURL>
-	<div></div> <!--class="container" align="center">
-		<h2>Wypis pacjenta</h2>-->
+	<div></div> <!--class="container" align="center">-->
+		<h2>Wypis pacjenta</h2>
 		<form:form method="post" commandName="dischargedPatientForm" action="${showDischargedPatientFormSubmittedURL}">
 		<table class="table table-condensed">
 		    <tr>

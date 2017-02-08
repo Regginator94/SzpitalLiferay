@@ -72,11 +72,11 @@ $(document).ready(function(){
 								<td>${shortInfo.bornDate}</td>					
 								<td>${shortInfo.idNumber}</td>	
 								<td>${shortInfo.phoneNumber}</td> 	
-								<portlet:actionURL var="WidokSzczegolowy">
-												<portlet:param name="action" value="detailsView" />
+								<portlet:renderURL var="WidokSzczegolowy">
+												<portlet:param name="action" value="showUpdatedPatientForm" />
 												<portlet:param name="id" value="${shortInfo.id}" />
-								</portlet:actionURL>	
-								<td><button type="button" class="close" data-dismiss="alert" href="${WidokSzczegolowy}">Widok</button></td>			 
+								</portlet:renderURL>	
+								<td><a href="${WidokSzczegolowy}">Modyfikuj</a></td>			 
 							</tr>
 						</c:forEach>
 					</tbody>

@@ -114,4 +114,14 @@ public class PatientDAOImpl implements PatientDAOInterface{
 		        patient.getPatientShortInfoId(), patient.getReason(), patient.getComment());
 	}
 
+	public void updatePatientIfModified(PatientShortInfo patient, int id) throws DataAccessException {
+		jdbcTemplate.update(
+		        "UPDATE patient SET id=?, name=?, second_name=?, surname=?, born_date=?, id_number=?, "
+		        + "sex=?, phone_number=?, nationality=?, insurance_number=? where id = ?",
+				patient.getId(), patient.getName(), patient.getSecondName(), patient.getSurname(),
+				patient.getBornDate(), patient.getIdNumber(), patient.getSex(), patient.getPhoneNumber(),
+				patient.getNationality(), patient.getInsuranceNumber(), id);
+		
+	}
+	
 }
