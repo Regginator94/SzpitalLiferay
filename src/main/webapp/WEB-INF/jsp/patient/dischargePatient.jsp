@@ -6,6 +6,9 @@
 <portlet:actionURL var="showDischargedPatientFormSubmittedURL">
     <portlet:param name="action" value="showDischargedPatientFormSubmitted"/>
 </portlet:actionURL>
+<portlet:renderURL var="showPatientListURL">
+    <portlet:param name="action" value="index"/>
+</portlet:renderURL>
 	<div></div> <!--class="container" align="center">-->
 		<h2>Wypis pacjenta</h2>
 		<form:form method="post" commandName="dischargedPatientForm" action="${showDischargedPatientFormSubmittedURL}">
@@ -28,6 +31,7 @@
 		        </td>
 		    </tr>
 		</table>
-		</form:form>  
+		</form:form>
+		<p><a href="${showPatientListURL}">Anuluj i wroc do listy pacjentow</a></p>  
 	</div>
 <%@include file="/WEB-INF/jsp/footer.jsp"%>
