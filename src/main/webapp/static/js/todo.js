@@ -1,7 +1,3 @@
-/*
- * @author Shaumik "Dada" Daityari
- * @copyright December 2013
- */
 
 /* Some info
 Using newer versions of jQuery and jQuery UI in place of the links given in problem statement
@@ -12,7 +8,7 @@ Otherwise, comments are provided at appropriate places
 var task;
 var priority;
 var todo = todo || {},
-    data = JSON.parse(localStorage.getItem("todoData"));
+    data = JSON.parse(localStorage.getItem("todoData")) || [];
 
 
 data = data || {};
@@ -28,7 +24,7 @@ data = data || {};
             todoDate: "task-date",
             todoDescription: "task-description",
             todoPriority: "task-priority",
-            taskId: "task-",
+            taskId: "task-id",
             formId: "todo-form",
             dataAttribute: "data",
             deleteDiv: "delete-div"
@@ -38,24 +34,31 @@ data = data || {};
             "3" : "#completed"
         };
 
-
+    
+    todo.getTasks = function (tasks) {
+    	task = tasks;
+    }
     
     todo.init = function (options) {
-    	task = options;
+    	
     	
         options = options || {};
         options = $.extend({}, defaults, options);
 
+        loadElements();
+        
+        
         $.each(data, function (index, params) {
             generateElement(params);
        
         });
-
+        
+        
         todo.getPriors = function (prior) {
         	priority = prior;
         }
         
-        loadElements(); 
+        
 
        
         // Adding drop function to each category of task
@@ -66,7 +69,12 @@ data = data || {};
                             css_id = element.attr("id"),
                             id = css_id.replace(options.taskId, ""),
                             object = data[id];
-
+                        	if(id < 100000) {
+                        		object = data[id-1];
+                        	} else {
+                        		object = data[id];
+                        	}
+                        
                             // Removing old element
                             removeElement(object);
 
@@ -77,8 +85,12 @@ data = data || {};
                             generateElement(object);
 
                             // Updating Local Storage
-                            data[id] = object;
-                            if(data[id].id > 1000000)
+                            if(id < 100000) {
+                            	data[id-1] = object;
+                            } else {
+                            	data[id] = object;
+                            }
+                            
                             	localStorage.setItem("todoData", JSON.stringify(data));
 
                             // Hiding Delete Area
@@ -94,12 +106,20 @@ data = data || {};
                     css_id = element.attr("id"),
                     id = css_id.replace(options.taskId, ""),
                     object = data[id];
-
+                if(id < 100000) {
+            		object = data[id-1];
+            	} else {
+            		object = data[id];
+            	}
                 // Removing old element
                 removeElement(object);
 
                 // Updating local storage
-                delete data[id];
+                if(id < 100000) {
+                	delete data[id-1];
+                } else {
+                	delete data[id];
+                }
                 localStorage.setItem("todoData", JSON.stringify(data));
 
                 // Hiding Delete Area
@@ -109,21 +129,41 @@ data = data || {};
 
     };
     
+    function checkForValue(json, value) {
+        for (key in json) {
+
+        	if(json[key].title === value.title && json[key].description === value.description) {
+        		return true;
+        	}
+        }
+        return false;
+    }
+    
+    var addItem = function (item) {
+    	oldVal = JSON.parse(localStorage.getItem('todoData')) || [];
+    	
+    		if(!checkForValue(oldVal, item)) {
+    			oldVal[item.id-1] = item;
+		    	localStorage.setItem('todoData', JSON.stringify(oldVal));
+	    	} 
+    		
+    	
+
+    }
     var loadElements = function () {
-  
     	for(i = 0; i < task.length; i++) {
     		tempData = {
     	            id : task[i].id,
-    	            taskId : task[i].id,
-    	            code: task[i].status,
+    	            code : task[i].status,
     	            title:  task[i].title,
     	            priority: task[i].priority,
     	            date: task[i].date,
     	            description: task[i].description
     	        };
-    		generateElement(tempData);
-    		data[task[i].id] = task[i];
+    		addItem(tempData);
     	}
+    	
+
     };
     
     var readPriority = function () {
@@ -168,10 +208,30 @@ data = data || {};
             "text": params.description
         }).appendTo(wrapper);
         
-       $("<div />", {
-            "class" : defaults.todoPriority,
-            "text": params.priority
-        }).appendTo(wrapper);
+       
+    	   if(params.priority == 1) {
+    		   $("<div />", {
+    		   "class" : defaults.todoPriority,
+    		   "text": params.priority
+    		   }).appendTo(wrapper);
+    	   }
+    	   
+    	   if(params.priority == 2) {
+    		   $("<div />", {
+    		   "class" : "task-priority2",
+    		   "text": params.priority
+    		   }).appendTo(wrapper);
+    	   }
+    	   
+    	   if(params.priority == 3) {
+    		   $("<div />", {
+    		   "class" : "task-priority3",
+    		   "text": params.priority
+    		   }).appendTo(wrapper);
+    	   }
+            
+            
+        
 
 	    wrapper.draggable({
             start: function() {
@@ -188,9 +248,14 @@ data = data || {};
   
     // Remove task
     var removeElement = function (params) {
-        $("#" + defaults.taskId + params.id).remove();
-    };
 
+    	$("#" + defaults.taskId + params.id).remove();
+    
+       
+    	
+    };
+    
+    // Adding task using form
     todo.add = function() {
         var inputs = $("#todo-form .t-f"),
             errorMessage = "Title can not be empty",
@@ -203,7 +268,7 @@ data = data || {};
 
         date = inputs[2].value;
 
-        if (!title) {
+        if (!title || !description || !date) {
             generateDialog(errorMessage);
             return;
         }
@@ -219,9 +284,8 @@ data = data || {};
             description: description
         };
 
-
-
         // Saving element in local storage
+        
         data[id] = tempData;
         localStorage.setItem("todoData", JSON.stringify(data));
 
@@ -237,33 +301,7 @@ data = data || {};
     };
 
     var generateDialog = function (message) {
-        var responseId = "response-dialog",
-            title = "Messaage",
-            responseDialog = $("#" + responseId),
-            buttonOptions;
-
-        if (!responseDialog.length) {
-            responseDialog = $("<div />", {
-                    title: title,
-                    id: responseId
-            }).appendTo($("body"));
-        }
-
-        responseDialog.html(message);
-
-        buttonOptions = {
-            "Ok" : function () {
-                responseDialog.dialog("close");
-            }
-        };
-
-	    responseDialog.dialog({
-            autoOpen: true,
-            width: 400,
-            modal: true,
-            closeOnEscape: true,
-            buttons: buttonOptions
-        });
+        alert("Wszystkie pola muszą być wypełnione");
     };
 
     todo.clear = function () {

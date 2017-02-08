@@ -38,7 +38,65 @@
 .task-status {
 	min-height: 100px;
 	
-	padding-bottom: 250px;
+}
+
+
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+
+.task-priority2 {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	margin-bottom: -15px;	
+}
+.task-priority	{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, brown 0%, Crimson 100%, brown 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, brown, Crimson);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, brown 0%, Crimson 100%, brown 95%);
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	margin-bottom: -15px;
+}
+
+.task-priority3	{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, DodgerBlue 0%, LightSkyBlue 100%, blue 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, DodgerBlue, LightSkyBlue);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, DodgerBlue 0%, LightSkyBlue 100%, DodgerBlue 95%);
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	margin-bottom: -15px;
+	
 }
 
 .task-list input, .task-list textarea{
@@ -107,4 +165,40 @@ h3{
     height: 75px;
     line-height: 75px;
     text-align: center;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+.container {
+visbility: hidden;
+}
+
+.hidden {
+  display: none;
+  -webkit-transition: display .5s ease;
+  -moz-transition: display .5s ease;
+  -o-transition: display .5s ease;
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
 }

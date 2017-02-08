@@ -29,8 +29,8 @@
 	href="<%=request.getContextPath()%>/static/css/ui.jqgrid-bootstrap.css" />
 <link rel="stylesheet" type="text/css" media="screen"
 	href="<%=request.getContextPath()%>/static/css/ui.jqgrid-bootstrap-ui.css" />
-<%--<link href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap.min.css" 
-	rel="stylesheet">--%>
+<link href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap.min.css" 
+	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/static/bootstrap/css/bootstrap-datepicker.css"
 	media="screen" rel="stylesheet">
