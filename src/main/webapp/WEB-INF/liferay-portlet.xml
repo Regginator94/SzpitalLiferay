@@ -27,6 +27,7 @@
 	</portlet>
 	<portlet>
 		<portlet-name>registration</portlet-name>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
 	</portlet>
 	
 </liferay-portlet-app>

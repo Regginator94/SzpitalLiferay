@@ -1,6 +1,7 @@
 package com.rejestracja_pacjenta.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -9,6 +10,7 @@ import javax.portlet.RenderResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -36,7 +38,7 @@ public class PatientRegistration {
 	protected void initBinder(WebDataBinder binder) {
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	    dateFormat.setLenient(false);
-
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	    // true passed to CustomDateEditor constructor means convert empty String to null
 	}
 	
