@@ -164,6 +164,33 @@ public class PatientController {
 		response.setRenderParameter("","");
 	}
     
+    @RenderMapping(params = "action=showPatientCard")
+    public String showPatientCard(RenderRequest request, RenderResponse response, Model model,
+			@RequestParam(value = "id") int id) {
+    	
+    	PatientShortInfo patientFullInfo = dao.getPatientFullInfo(id);
+    	model.addAttribute("patientFullInfo", patientFullInfo);
+    	PatientShortInfo updatedPatient = new PatientShortInfo();
+    	model.addAttribute("updatedPatient", updatedPatient);
+        Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
+        healthStatusList.put("Stabilny", "Stabilny");
+        healthStatusList.put("Ciezki", "Ciezki");
+        healthStatusList.put("Agonalny", "Agonalny");
+        model.addAttribute("healthStatusList", healthStatusList);
+    	
+        return "patientCard";
+    }
+    
+    @ActionMapping(params = "action=showPatientCardUpdated") 
+	public void showPatientCardUpdated(ActionRequest request, ActionResponse response, @ModelAttribute("updatedPatient") @Validated PatientShortInfo updatedPatient, BindingResult result, Model model,
+			@RequestParam(value = "id") int id) {
+    	model.addAttribute("updatedPatient", updatedPatient);
+    	dao.updatePatientCard(updatedPatient);
+		//info o update?
+		response.setRenderParameter("action","showPatientCard");
+		response.setRenderParameter("id",""+id);
+	}
+    
 	@ActionMapping(params = "action =  detailsView")
 	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
 			@RequestParam(value = "id") int id) {

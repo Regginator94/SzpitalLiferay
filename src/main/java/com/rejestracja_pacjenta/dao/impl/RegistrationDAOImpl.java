@@ -49,6 +49,9 @@ public class RegistrationDAOImpl {
 			jdbcTemplate.update(
 			        "INSERT INTO registration_details (id, registration_datetime) values (?, NOW())",
 			        patient.getId());
+			jdbcTemplate.update(
+			        "INSERT INTO activities (patient_id, activity_type, activity_datetime) values (?, ?, NOW())",
+			        patient.getId(), "Rejestracja pacjenta");
 		}
 	
 }
