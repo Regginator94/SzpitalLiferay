@@ -12,8 +12,8 @@
 	
 
 
-		<div class="row">
-			<table id="sort2" class="table table-striped table-bordered tablesorter">	
+		<%--<div class="row">
+ 			<table id="sort2" class="table table-striped table-bordered tablesorter">	
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -38,7 +38,7 @@
 					</tbody>
 			</table> 
 			
-		</div>
+		</div> --%>
 		
 			<div class="task-container">
                 	<div class="task-list">

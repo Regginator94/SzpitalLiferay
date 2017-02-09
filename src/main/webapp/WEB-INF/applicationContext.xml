@@ -13,9 +13,9 @@
 		<property name="jdbcUrl"
 			value="jdbc:mysql://mysql591.cp.az.pl/db1198963_hospital" />
 		<property name="user"
-			value="u1198963_admin"/>
+			value="u1198963_xartez"/>
 		<property name="password"
-			value="FOM_cZUy"/>
+			value="Gffye33hH"/>
 
 		<!-- these are C3P0 properties -->
 		<property name="acquireIncrement" value="15" />
