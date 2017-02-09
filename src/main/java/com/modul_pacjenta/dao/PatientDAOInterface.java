@@ -14,6 +14,9 @@ public interface PatientDAOInterface {
 	List<PatientShortInfo> getPatientShortInfo()
 			throws DataAccessException;
 	
+	public PatientShortInfo getPatientFullInfo(int id) 
+			throws DataAccessException;
+
 	public void insertPatientShortInfo(PatientShortInfo patient)
 			throws DataAccessException;
 	
@@ -27,5 +30,8 @@ public interface PatientDAOInterface {
 			throws DataAccessException;
 	
 	public void updatePatientIfModified(PatientShortInfo patient, int id)
+			throws DataAccessException;
+	
+	public void updatePatientCard(PatientShortInfo patient)
 			throws DataAccessException;
 }
