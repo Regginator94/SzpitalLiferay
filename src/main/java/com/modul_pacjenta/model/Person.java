@@ -12,14 +12,14 @@ public class Person {
 	protected String sex;
 	protected String phoneNumber;
 	protected String nationality;
-	protected HomeAddress homeAddress;
+	protected String homeAddress;
 	
 	public Person(){
 		
 	}
 	public Person(int id, String name, String secondName, String surname,
 			Date bornDate, long idNumber, String sex, String phoneNumber,
-			String nationality, HomeAddress homeAddress) {
+			String nationality, String homeAddress) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -86,10 +86,10 @@ public class Person {
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
-	public HomeAddress getHomeAddress() {
+	public String getHomeAddress() {
 		return homeAddress;
 	}
-	public void setHomeAddress(HomeAddress homeAddress) {
+	public void setHomeAddress(String homeAddress) {
 		this.homeAddress = homeAddress;
 	}
 

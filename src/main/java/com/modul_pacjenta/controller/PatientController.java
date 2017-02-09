@@ -92,6 +92,11 @@ public class PatientController {
     public String showPatientForm(RenderRequest request, RenderResponse response, Model model) {
         PatientShortInfo patientForm = new PatientShortInfo();    
         model.addAttribute("patientForm", patientForm);
+        Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
+        healthStatusList.put("Stabilny", "Stabilny");
+        healthStatusList.put("Ciezki", "Ciezki");
+        healthStatusList.put("Agonalny", "Agonalny");
+        model.addAttribute("healthStatusList", healthStatusList);
         return "newPatient";
     }
 	
