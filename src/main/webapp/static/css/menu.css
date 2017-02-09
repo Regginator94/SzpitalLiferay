@@ -1,27 +1,33 @@
 .patient {
 	background: url(../img/drip-patient-pictogram.svg) no-repeat;
-	width: 25vh;
-	height: 25vh;
+	min-width: 20vh;
+	min-height: 20vh;
+	max-width: 25vh;
+	max-height: 25vh;
 	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }
 
 .outer {
-	width: 100%;
-	min-height: 500px;
+	width: 100vh;
+
 	
 }
 .inner {
     margin: 0 auto; 
-    min-height: 500px;
+    min-height: 100%;
+    min-width: 100%;
+    
     
 }
 
 .home {
 	background: url(../img/Vista-folder_home.svg.png) no-repeat;
-	width: 25vh;
-	height: 25vh;
+	min-width: 20vh;
+	min-height: 20vh;
+	max-width: 25vh;
+	max-height: 25vh;
 	background-size: 100% 100%;
 	background-position: center;
 	border: none;
@@ -29,8 +35,10 @@
 
 .archive {
 	background: url(../img/archive-icon-12.png) no-repeat;
-	width: 25vh;
-	height: 25vh;
+	min-width: 20vh;
+	min-height: 20vh;
+	max-width: 25vh;
+	max-height: 25vh;
 	background-size: 100% 100%;
 	background-position: center;
 	border: none;
@@ -38,8 +46,10 @@
 
 .report {
 	background: url(../img/task_report_regular.png) no-repeat;
-	width: 25vh;
-	height: 25vh;
+	min-width: 20vh;
+	min-height: 20vh;
+	max-width: 25vh;
+	max-height: 25vh;
 	background-size: 100% 100%;
 	background-position: center;
 	border: none;
@@ -47,8 +57,10 @@
 
 .pharmacy {
 	background: url(../img/Blue-Pharmacy-logo.svg) no-repeat;
-	width: 25vh;
-	height: 25vh;
+	min-width: 20vh;
+	min-height: 20vh;
+	max-width: 25vh;
+	max-height: 25vh;
 	background-size: 100% 100%;
 	background-position: center;
 	border: none;

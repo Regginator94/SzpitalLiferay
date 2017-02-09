@@ -1,5 +1,6 @@
 <%@include file="/WEB-INF/jsp/header.jsp"%>
-
+<link rel="stylesheet" type="text/css" media="screen"
+	href="<%=request.getContextPath()%>/static/css/patient.css" />
 <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>Tabela pacjentow</title>-->
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
@@ -68,6 +69,6 @@
 		    </tr>
 		</table>
 		</form:form>
-		<p><a href="${showPatientListURL}">Anuluj i wroc do listy pacjentow</a></p>  
+		<a href="${showPatientListURL}"><div class="back"></div></a>
 	</div>
 <%@include file="/WEB-INF/jsp/footer.jsp"%>

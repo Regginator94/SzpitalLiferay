@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.add-patient {
+	float: left;
+	background: url(../img/add-patient.png) no-repeat;
+	width: 5vh;
+	height: 5vh;
+	background-size: 100% 100%;
+	margin:5px 5px 5px 5px;	
+	background-position: center;
+}
+
+.delete-patient {
+	float: left;
+	background: url(../img/delete-user.png) no-repeat;
+	width: 5vh;
+	height: 5vh;
+	background-size: 100% 100%;
+	background-position: center;
+	margin:5px 5px 5px 5px;
+}
+
+.modify-patient {
+	background: url(../img/modify-patient.png) no-repeat;
+	width: 3vh;
+	height: 3vh;
+	min-height: 10px;
+	background-size: 100% 100%;
+	margin:3px 3px 3px 3px;	
+	background-position: center;
+}
+
+.back {
+	background: url(../img/back.png) no-repeat;
+	width: 3vh;
+	height: 3vh;
+
+	background-size: 100% 100%;
+	margin:5px 5px 5px 5px;	
+	background-position: center;
+}
