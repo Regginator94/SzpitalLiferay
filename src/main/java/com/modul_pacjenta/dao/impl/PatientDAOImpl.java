@@ -44,25 +44,26 @@ public class PatientDAOImpl implements PatientDAOInterface{
 	//TO DO poprawic zapytanie oraz dostosowaï¿½ konstruktor do zapytania po utworzeniu tabeli w BD
 	public PatientShortInfo getPatientShortInfo(int id) throws DataAccessException {
 		PatientShortInfo patient = jdbcTemplate.queryForObject("SELECT id, name, second_name, surname, "
-				+ "born_date, id_number, sex, phone_number, nationality, insurance_number FROM patient WHERE id=? AND discharged=false",
+				+ "born_date, id_number, sex, phone_number, nationality, insurance_number, home_address "
+				+ "FROM patient WHERE id=? AND discharged=false",
 				new RowMapper<PatientShortInfo>(){
 			public PatientShortInfo mapRow(ResultSet rs, int rowNumber)
 					throws SQLException {
 				return new PatientShortInfo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
 						rs.getDate(5),rs.getLong(6), rs.getString(7), rs.getString(8), rs.getString(9), 
-						rs.getInt(10));
+						rs.getInt(10), rs.getString(11));
 			}
 
 		}, new Object[] { id });	
 		
 		//ODKOMENTOWAÆ PO WPROWADZENIU DANYCH DO TABELI HOME_ADDESS\\\
 		
-//		patient.setHomeAddress(jdbcTemplate.queryForObject("SELECT city, street, number, code from home_address WHERE id=?",
-//				new RowMapper<HomeAddress>(){
+//		patient.setString(jdbcTemplate.queryForObject("SELECT city, street, number, code from home_address WHERE id=?",
+//				new RowMapper<String>(){
 //			@Override
-//			public HomeAddress mapRow(ResultSet rs, int rowNumber)
+//			public String mapRow(ResultSet rs, int rowNumber)
 //					throws SQLException {
-//				return new HomeAddress(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+//				return new String(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
 //			}
 //
 //		}, new Object[] { id }));
@@ -72,14 +73,14 @@ public class PatientDAOImpl implements PatientDAOInterface{
 	public List<PatientShortInfo> getPatientShortInfo()
 			throws DataAccessException {	
 		return jdbcTemplate.query("SELECT id, name, second_name, surname, born_date, id_number, "
-				+ "sex, phone_number, nationality, insurance_number FROM patient WHERE discharged=false",				
+				+ "sex, phone_number, nationality, insurance_number, home_address FROM patient WHERE discharged=false",				
 				new RowMapper<PatientShortInfo>(){
 
 			public PatientShortInfo mapRow(ResultSet rs, int rowNum)
 					throws SQLException {
 				PatientShortInfo patient = new PatientShortInfo(rs.getInt(1), rs.getString(2), rs.getString(3), 
 						rs.getString(4), rs.getDate(5), rs.getLong(6), rs.getString(7),
-						rs.getString(8), rs.getString(9), rs.getInt(10));
+						rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
 				System.out.println(patient);
 				return patient ;
 			}			
@@ -90,10 +91,12 @@ public class PatientDAOImpl implements PatientDAOInterface{
 	public void insertPatientShortInfo(PatientShortInfo patient) throws DataAccessException {
 		jdbcTemplate.update(
 		        "INSERT INTO patient (id, name, second_name, surname, born_date, id_number, "
-				+ "sex, phone_number, nationality, insurance_number) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+				+ "sex, phone_number, nationality, insurance_number, home_address, health_status, "
+				+ "disease, medicines, allergies) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 				patient.getId(), patient.getName(), patient.getSecondName(), patient.getSurname(),
 				patient.getBornDate(), patient.getIdNumber(), patient.getSex(), patient.getPhoneNumber(),
-				patient.getNationality(), patient.getInsuranceNumber());
+				patient.getNationality(), patient.getInsuranceNumber(), patient.getHomeAddress(),
+				patient.getHealthStatus(), patient.getDisease(), patient.getMedicines(), patient.getAllergies());
 	}
 	
 	public void insertPatientRegistrationDetails(PatientShortInfo patient) throws DataAccessException {
@@ -117,10 +120,10 @@ public class PatientDAOImpl implements PatientDAOInterface{
 	public void updatePatientIfModified(PatientShortInfo patient, int id) throws DataAccessException {
 		jdbcTemplate.update(
 		        "UPDATE patient SET id=?, name=?, second_name=?, surname=?, born_date=?, id_number=?, "
-		        + "sex=?, phone_number=?, nationality=?, insurance_number=? where id = ?",
+		        + "sex=?, phone_number=?, nationality=?, insurance_number=?, home_address=? where id = ?",
 				patient.getId(), patient.getName(), patient.getSecondName(), patient.getSurname(),
 				patient.getBornDate(), patient.getIdNumber(), patient.getSex(), patient.getPhoneNumber(),
-				patient.getNationality(), patient.getInsuranceNumber(), id);
+				patient.getNationality(), patient.getInsuranceNumber(), patient.getHomeAddress(), id);
 		
 	}
 	

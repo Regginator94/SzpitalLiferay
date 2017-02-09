@@ -62,6 +62,31 @@
 		        <form:errors path="insuranceNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
+		        <td><form:label path="homeAddress">Adres (miejscowosc, ulica, nr domu)</form:label></td>
+		        <td><form:textarea path="homeAddress" rows="2" style="resize:none;" title="Poprawny adres" required="true"/>
+		        <form:errors path="homeAddress" class="text-danger"/></td>
+		    </tr>
+		    <tr>
+		        <td><form:label path="healthStatus">Stan zdrowia pacjenta</form:label></td>
+		        <td><form:select path="healthStatus" items="${healthStatusList}" /></td>
+		        <form:errors path="healthStatus" class="text-danger"/></td>
+		    </tr>
+		    <tr>
+		        <td><form:label path="disease">Choroba</form:label></td>
+		        <td><form:input path="disease" title="Poprawny typ choroby" required="true"/>
+		        <form:errors path="disease" class="text-danger"/></td>
+		    </tr>
+		    <tr>
+		        <td><form:label path="medicines">Przyjmowane leki</form:label></td>
+		        <td><form:textarea path="medicines" rows="3" style="resize:none;"/>
+		        <form:errors path="medicines" class="text-danger"/></td>
+		    </tr>
+		    <tr>
+		        <td><form:label path="medicines">Alergie (pokarmowe) pacjenta</form:label></td>
+		        <td><form:textarea path="medicines" style="resize:none;" rows="3"/>
+		        <form:errors path="medicines" class="text-danger"/></td>
+		    </tr>
+		    <tr>
 		        <td colspan="2">
 		            <form:input class="submit" path="" type="submit" value="Wyslij"></form:input>
 		        </td>

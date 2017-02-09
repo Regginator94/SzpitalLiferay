@@ -62,6 +62,11 @@
 		        <form:errors path="insuranceNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
+		        <td><form:label path="homeAddress">Adres (miejscowosc, ulica, nr domu)</form:label></td>
+		        <td><form:input path="homeAddress" value="${currentPatientShortInfo.homeAddress}" title="Poprawny adres" required="true" />
+		        <form:errors path="homeAddress" class="text-danger"/></td>
+		    </tr>
+		    <tr>
 		        <td colspan="2">
 		            <form:input class="submit" path="" type="submit" value="Wyslij"></form:input>
 		        </td>
