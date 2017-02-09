@@ -32,5 +32,8 @@
 	<portlet>
 		<portlet-name>menu</portlet-name>
  	</portlet>
+ 	<portlet>
+		<portlet-name>wypis</portlet-name>
+ 	</portlet>
 	
 </liferay-portlet-app>
