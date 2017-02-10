@@ -19,7 +19,7 @@ $(document).ready(function(){
 	<div> 
 		<div>
 			<input type="text" id="szukaj_osoby" placeholder="Szukaj pacjenta...">
-			<table id="sort" class="table table-striped table-bordered tablesorter" style="text-align: center; margin: 0 5px 0 5px">	
+			<table id="sort" class="table table-striped table-bordered tablesorter centertab" style="text-align: center;">	
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -48,7 +48,7 @@ $(document).ready(function(){
 												<portlet:param name="action" value="showUpdatedPatientForm" />
 												<portlet:param name="id" value="${shortInfo.id}" />
 								</portlet:renderURL>	
-								<td style="max-width: 30px"><a href="${WidokSzczegolowy}" ><div class="modify-patient"></div></a></td>
+								<td ><a href="${WidokSzczegolowy}" ><div class="modify-patient"></div></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

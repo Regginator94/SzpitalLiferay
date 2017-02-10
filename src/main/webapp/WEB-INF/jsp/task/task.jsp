@@ -8,12 +8,12 @@
 
 
 
-	<div class="container" align="center">
+	
 	
 
-
-		<div class="row">
-			<table id="sort2" class="table table-striped table-bordered tablesorter">	
+		
+		<%--<div class="row">
+ 			<table id="sort2" class="table table-striped table-bordered tablesorter">	
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -38,9 +38,14 @@
 					</tbody>
 			</table> 
 			
-		</div>
+		</div> --%>
 		
-			<div class="task-container">
+		<button type="button" class="btn btn-primary" id="zadania-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
+  							Zadania
+						</button>
+		<div id ="zadania" class="hidden" align="center" >
+		<div class="header" >
+			<div class="task-container" >
                 	<div class="task-list">
                 		<h3>Zadania</h3>
 	                	<div class="task-status" id="pending">_____________________</div>
@@ -110,7 +115,7 @@
    				</div> 
             </div>
       </div>            
-      
+      </div>
            
 
 
@@ -134,7 +139,18 @@ $(document).ready(function(){
 		}   
 		$(this).toggleClass('enabled');   
 		$('#add-container').toggleClass('task-list');
-			});
+	});
+	$("#zadania-btn").click(function () {	
+		if(($(this).is('.enabled')) ) {
+			$('#zadania').toggleClass('hidden');
+		 }
+		
+		else {
+			$('#zadania').removeClass('hidden');	
+		}   
+		$(this).toggleClass('enabled');   
+		
+	});
 	  
 			$("#fancy-checkbox-info").click( function () {
 		if($('#fancy-checkbox-info').is('.active')) {

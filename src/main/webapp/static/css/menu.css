@@ -1,7 +1,7 @@
 .patient {
 	background: url(../img/drip-patient-pictogram.svg) no-repeat;
-	min-width: 20vh;
-	min-height: 20vh;
+	min-width: 18vh;
+	min-height: 18vh;
 	max-width: 25vh;
 	max-height: 25vh;
 	background-size: 100% 100%;
@@ -24,19 +24,33 @@
 
 .home {
 	background: url(../img/Vista-folder_home.svg.png) no-repeat;
-	min-width: 20vh;
-	min-height: 20vh;
+	min-width: 18vh;
+	min-height: 18vh;
 	max-width: 25vh;
 	max-height: 25vh;
 	background-size: 100% 100%;
 	background-position: center;
 	border: none;
 }
-
+.home:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.patient:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.archive:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.report:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.pharmacy:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .archive {
 	background: url(../img/archive-icon-12.png) no-repeat;
-	min-width: 20vh;
-	min-height: 20vh;
+	min-width: 18vh;
+	min-height: 18vh;
 	max-width: 25vh;
 	max-height: 25vh;
 	background-size: 100% 100%;
@@ -45,9 +59,12 @@
 }
 
 .report {
+	
 	background: url(../img/task_report_regular.png) no-repeat;
-	min-width: 20vh;
-	min-height: 20vh;
+	
+	outline: none;
+	min-width: 18vh;
+	min-height: 18vh;
 	max-width: 25vh;
 	max-height: 25vh;
 	background-size: 100% 100%;
@@ -57,8 +74,8 @@
 
 .pharmacy {
 	background: url(../img/Blue-Pharmacy-logo.svg) no-repeat;
-	min-width: 20vh;
-	min-height: 20vh;
+	min-width: 18vh;
+	min-height: 18vh;
 	max-width: 25vh;
 	max-height: 25vh;
 	background-size: 100% 100%;
