@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
+import com.modul_pacjenta.model.Activity;
 import com.modul_pacjenta.model.DischargedPatient;
 import com.modul_pacjenta.model.PatientShortInfo;
 
@@ -33,5 +34,11 @@ public interface PatientDAOInterface {
 			throws DataAccessException;
 	
 	public void updatePatientCard(PatientShortInfo patient)
+			throws DataAccessException;
+	
+	List<Activity> getActivity(int id)
+			throws DataAccessException;
+	
+	public void insertActivity(Activity activity)
 			throws DataAccessException;
 }

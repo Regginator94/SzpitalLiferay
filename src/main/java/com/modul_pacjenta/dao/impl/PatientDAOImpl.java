@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.modul_pacjenta.dao.PatientDAOInterface;
+import com.modul_pacjenta.model.Activity;
 import com.modul_pacjenta.model.DischargedPatient;
 import com.modul_pacjenta.model.PatientShortInfo;
 
@@ -180,6 +181,28 @@ public class PatientDAOImpl implements PatientDAOInterface{
 		        "INSERT INTO activities (patient_id, activity_type, additional_info, activity_datetime) values (?, ?, ?, NOW())",
 		        patient.getId(), "Zmiana stanu pacjenta", patient.getHealthStatus());
 		}
+	}
+
+	public List<Activity> getActivity(int id) throws DataAccessException {
+		return jdbcTemplate.query("SELECT patient_id, activity_type, additional_info, activity_datetime FROM activities WHERE patient_id=? ORDER BY activity_datetime desc",				
+				new RowMapper<Activity>(){
+
+			public Activity mapRow(ResultSet rs, int rowNum)
+					throws SQLException {
+				Activity activity = new Activity(rs.getInt(1), rs.getString(2), rs.getString(3), 
+						rs.getDate(4));
+				System.out.println(activity);
+				return activity;
+			}			
+		}, new Object[] { id });
+	}
+
+	public void insertActivity(Activity activity) throws DataAccessException {
+		jdbcTemplate.update(
+		        "INSERT INTO activities (patient_id, activity_type, additional_info, activity_datetime) "
+				+ "values (?, ?, ?, NOW())",
+				activity.getPatientId(), activity.getActivityType(), activity.getAdditionalInfo());
+		
 	}
 	
 }

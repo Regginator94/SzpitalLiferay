@@ -31,6 +31,7 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.modul_pacjenta.dao.impl.PatientDAOImpl;
+import com.modul_pacjenta.model.Activity;
 import com.modul_pacjenta.model.DischargedPatient;
 import com.modul_pacjenta.model.PatientShortInfo;
 import com.modul_pacjenta.validator.PatientFormValidator;
@@ -172,12 +173,31 @@ public class PatientController {
     	model.addAttribute("patientFullInfo", patientFullInfo);
     	PatientShortInfo updatedPatient = new PatientShortInfo();
     	model.addAttribute("updatedPatient", updatedPatient);
+    	
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
         healthStatusList.put("Ciezki", "Ciezki");
         healthStatusList.put("Agonalny", "Agonalny");
         model.addAttribute("healthStatusList", healthStatusList);
+        
+		List<Activity> activityList = new LinkedList<Activity>();
+		activityList = dao.getActivity(id);
+		model.addAttribute("activityList", activityList);
+		
+		Map<String,String> activityTypeList = new LinkedHashMap<String,String>();
+		activityTypeList.put("Zabieg", "Zabieg");
+		activityTypeList.put("Podanie lekow (rano)", "Podanie lekow (rano)");
+		activityTypeList.put("Podanie lekow (poludnie)", "Podanie lekow (poludnie)");
+		activityTypeList.put("Podanie lekow (popoludnie)", "Podanie lekow (popoludnie)");
+		activityTypeList.put("Podanie lekow (wieczor)", "Podanie lekow (wieczor)");
+		activityTypeList.put("Podanie posilku (sniadanie)", "Podanie posilku (sniadanie)");
+		activityTypeList.put("Podanie posilku (obiad)", "Podanie posilku (obiad)");
+		activityTypeList.put("Podanie posilku (kolacja)", "Podanie posilku (kolacja)");
+        model.addAttribute("activityTypeList", activityTypeList);
     	
+        Activity activity = new Activity();
+        model.addAttribute("activity", activity);
+        
         return "patientCard";
     }
     
@@ -190,6 +210,17 @@ public class PatientController {
 		response.setRenderParameter("action","showPatientCard");
 		response.setRenderParameter("id",""+id);
 	}
+    
+    @ActionMapping(params = "action=showActivityAdded") 
+   	public void showActivityAdded(ActionRequest request, ActionResponse response, @ModelAttribute("activity") Activity activity, BindingResult result, Model model,
+   			@RequestParam(value = "id") int id) {
+       	model.addAttribute("activity", activity);
+       	activity.setPatientId(id);
+       	dao.insertActivity(activity);
+   		//info o update?
+   		response.setRenderParameter("action","showPatientCard");
+   		response.setRenderParameter("id",""+id);
+   	}
     
 	@ActionMapping(params = "action =  detailsView")
 	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
