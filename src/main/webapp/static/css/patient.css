@@ -1,5 +1,16 @@
 @CHARSET "UTF-8";
 
+.centertab  td {
+	vertical-align: middle !important;
+	margin-top: 10px !important;
+}
+
+.centertab th {
+	text-align: center;
+	vertical-align: middle !important;
+	margin-top: 10px !important;
+}
+
 .add-patient {
 	float: left;
 	background: url(../img/add-patient.png) no-repeat;
