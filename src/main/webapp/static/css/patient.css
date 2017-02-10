@@ -37,7 +37,7 @@
 	height: 3vh;
 	min-height: 10px;
 	background-size: 100% 100%;
-	margin:3px 3px 3px 3px;	
+	horizontal-align: middle;
 	background-position: center;
 }
 

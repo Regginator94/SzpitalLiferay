@@ -44,7 +44,7 @@ $(document).ready(function(){
 												<portlet:param name="action" value="showUpdatedPatientForm" />
 												<portlet:param name="id" value="${shortInfo.id}" />
 								</portlet:renderURL>	
-								<td style="max-width: 20px"><a href="${WidokSzczegolowy}" ><div class="modify-patient"></div></a></td>
+								<td ><a href="${WidokSzczegolowy}" ><div class="modify-patient"></div></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

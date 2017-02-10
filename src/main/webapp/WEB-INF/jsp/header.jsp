@@ -43,6 +43,7 @@
 <link
 	href="<%=request.getContextPath()%>/static/css/tablesorter.css"
 	media="screen" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 
 <script src="<%=request.getContextPath()%>/static/js/jquery-1.11.0.min.js"
 	type="text/javascript"></script>
