@@ -19,7 +19,7 @@
 		        <td><form:input path="id" value="${currentPatientShortInfo.id}" readonly="true" /></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="name">Imie</form:label></td>
+		        <td><form:label path="name">Imię</form:label></td>
 		        <td><form:input path="name" value="${currentPatientShortInfo.name}" required="true" />
 		        <form:errors path="name" class="text-danger"/></td>
 		    </tr>

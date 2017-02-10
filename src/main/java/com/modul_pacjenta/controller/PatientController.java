@@ -152,7 +152,7 @@ public class PatientController {
     	model.addAttribute("currentPatientShortInfo", currentPatientShortInfo);
     	PatientShortInfo patientForm = new PatientShortInfo();    
         model.addAttribute("patientForm", patientForm);
-        
+       
         return "updatePatient";
     }
 	
@@ -173,7 +173,6 @@ public class PatientController {
     	model.addAttribute("patientFullInfo", patientFullInfo);
     	PatientShortInfo updatedPatient = new PatientShortInfo();
     	model.addAttribute("updatedPatient", updatedPatient);
-
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
         healthStatusList.put("Ciezki", "Ciezki");
@@ -216,6 +215,7 @@ public class PatientController {
    			@RequestParam(value = "id") int id) {
        	model.addAttribute("activity", activity);
        	activity.setPatientId(id);
+       	System.out.println(activity);
        	dao.insertActivity(activity);
    		//info o update?
    		response.setRenderParameter("action","showPatientCard");
@@ -226,7 +226,7 @@ public class PatientController {
 	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
 			@RequestParam(value = "id") int id) {
 		
-		System.out.println("czy wjesz≥o?");
+		System.out.println("czy wjesz≈Ço?");
 		ModelAndView modelAndView = ModelAndViewUtils
 				.createModelAndView("details");
 		PatientShortInfo patientShortInfo = dao.getPatientShortInfo(id);

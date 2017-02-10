@@ -1,9 +1,11 @@
 <%@include file="/WEB-INF/jsp/header.jsp"%>
-
+<link rel="stylesheet" type="text/css" media="screen"
+	href="<%=request.getContextPath()%>/static/css/patient.css" />
 <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>Tabela pacjentow</title>-->
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
-
+<link rel="stylesheet" type="text/css" media="screen"
+	href="<%=request.getContextPath()%>/static/css/patient.css" />
 <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js"></script>
 	<script type="text/javascript">
 $(document).ready(function(){   
@@ -25,9 +27,10 @@ $(document).ready(function(){
 </portlet:actionURL>
 
 	<div> <!--class="container" align="center">--> 
+		<div class="left">
 		<h2>Karta pacjenta</h2>
 		<h4>Dane osobowe</h4>
-		<p>Imie i nazwisko: ${patientFullInfo.name} ${patientFullInfo.surname}</p>
+		<p>Imię i nazwisko: ${patientFullInfo.name} ${patientFullInfo.surname}</p>
 		<p>Data urodzenia: ${patientFullInfo.bornDate}</p>
 		<p>PESEL: ${patientFullInfo.idNumber}</p>
 		<p>Adres zamieszkania: ${patientFullInfo.homeAddress}</p>
@@ -55,6 +58,9 @@ $(document).ready(function(){
 		<form:input path="allergies" />
 		<form:input class="submit" path="" type="submit" value="Dodaj alergie"></form:input>
 		</form:form>
+		<a href="${showPatientListURL}"><div class="back"></div></a>
+		</div>
+		<div class="right">
 		<h4>Aktywnosci</h4>
 		<table id="sort" class="table table-condensed table-stripped table-bordered">	
 				<thead>
@@ -78,6 +84,7 @@ $(document).ready(function(){
 			<form:input path="additionalInfo" />
 			<form:input class="submit" path="" type="submit" value="Dodaj aktywnosc"></form:input>
 			</form:form>
-		<p><a href="${showPatientListURL}">Powrot do listy pacjentow</a></p>  
+					
+			</div>
 	</div>
 <%@include file="/WEB-INF/jsp/footer.jsp"%>
