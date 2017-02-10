@@ -202,7 +202,6 @@ public class PatientDAOImpl implements PatientDAOInterface{
 		        "INSERT INTO activities (patient_id, activity_type, additional_info, activity_datetime) "
 				+ "values (?, ?, ?, NOW())",
 				activity.getPatientId(), activity.getActivityType(), activity.getAdditionalInfo());
-		
 	}
 	
 }

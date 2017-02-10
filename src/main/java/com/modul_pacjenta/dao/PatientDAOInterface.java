@@ -35,10 +35,11 @@ public interface PatientDAOInterface {
 	
 	public void updatePatientCard(PatientShortInfo patient)
 			throws DataAccessException;
-	
+
 	List<Activity> getActivity(int id)
 			throws DataAccessException;
 	
 	public void insertActivity(Activity activity)
 			throws DataAccessException;
+
 }

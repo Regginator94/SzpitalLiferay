@@ -1,6 +1,8 @@
 <%@include file="/WEB-INF/jsp/header.jsp"%>
 <!--  <title>Lista pacjentow</title> -->
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
+<link rel="stylesheet" type="text/css" media="screen"
+	href="<%=request.getContextPath()%>/static/css/patient.css" />
 <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js"></script>
 	<script type="text/javascript">
 $(document).ready(function(){   
@@ -17,7 +19,7 @@ $(document).ready(function(){
 	<div> 
 		<div>
 			<input type="text" id="szukaj_osoby" placeholder="Szukaj pacjenta...">
-			<table id="sort" class="table table-striped table-bordered tablesorter">	
+			<table id="sort" class="table table-striped table-bordered tablesorter" style="text-align: center; margin: 0 5px 0 5px">	
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -46,13 +48,13 @@ $(document).ready(function(){
 												<portlet:param name="action" value="showUpdatedPatientForm" />
 												<portlet:param name="id" value="${shortInfo.id}" />
 								</portlet:renderURL>	
-								<td><a href="${WidokSzczegolowy}">Modyfikuj</a></td>			 
+								<td style="max-width: 30px"><a href="${WidokSzczegolowy}" ><div class="modify-patient"></div></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 			</table> 
-			<p><a href="${showPatientFormURL}">Rejestracja pacjenta</a></p>
-			<p><a href="${showDischargedPatientFormURL}">Wypis pacjenta</a></p>
+			<a href="${showPatientFormURL}"><span class="add-patient"></span></a>
+			<a href="${showDischargedPatientFormURL}"><span class="delete-patient"></span></a>
 		</div>
 	</div> 
 	

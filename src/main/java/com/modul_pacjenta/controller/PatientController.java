@@ -173,13 +173,13 @@ public class PatientController {
     	model.addAttribute("patientFullInfo", patientFullInfo);
     	PatientShortInfo updatedPatient = new PatientShortInfo();
     	model.addAttribute("updatedPatient", updatedPatient);
-    	
+
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
         healthStatusList.put("Ciezki", "Ciezki");
         healthStatusList.put("Agonalny", "Agonalny");
         model.addAttribute("healthStatusList", healthStatusList);
-        
+
 		List<Activity> activityList = new LinkedList<Activity>();
 		activityList = dao.getActivity(id);
 		model.addAttribute("activityList", activityList);
@@ -221,7 +221,7 @@ public class PatientController {
    		response.setRenderParameter("action","showPatientCard");
    		response.setRenderParameter("id",""+id);
    	}
-    
+
 	@ActionMapping(params = "action =  detailsView")
 	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
 			@RequestParam(value = "id") int id) {

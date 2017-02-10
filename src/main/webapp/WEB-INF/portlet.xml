@@ -75,10 +75,9 @@
  		</supports>
  		<portlet-info>
 			<title>Rejestracja Pacjenta</title>
-
  		</portlet-info>
  	</portlet>
-		<portlet>
+	<portlet>
 		<portlet-name>menu</portlet-name>
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<init-param>
@@ -91,6 +90,21 @@
 		</supports>
 		<portlet-info>
 			<title>Menu</title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<portlet-name>wypis</portlet-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/wypis-servlet.xml</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Wypis Pacjenta</title>
 		</portlet-info>
 	</portlet>
 </portlet-app>

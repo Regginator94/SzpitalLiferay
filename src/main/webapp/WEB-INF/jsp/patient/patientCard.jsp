@@ -3,12 +3,14 @@
 <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>Tabela pacjentow</title>-->
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
+
 <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/__jquery.tablesorter/jquery.tablesorter.min.js"></script>
 	<script type="text/javascript">
 $(document).ready(function(){   
 	$('#sort').tablesorter(); 	
 });
 </script>
+
 <portlet:actionURL var="showPatientCardUpdatedURL">
     <portlet:param name="action" value="showPatientCardUpdated"/>
     <portlet:param name="id" value="${patientFullInfo.id}"/>
@@ -16,10 +18,12 @@ $(document).ready(function(){
 <portlet:renderURL var="showPatientListURL">
     <portlet:param name="action" value="index"/>
 </portlet:renderURL>
+
 <portlet:actionURL var="showActivityAddedURL">
     <portlet:param name="action" value="showActivityAdded"/>
     <portlet:param name="id" value="${patientFullInfo.id}"/>
 </portlet:actionURL>
+
 	<div> <!--class="container" align="center">--> 
 		<h2>Karta pacjenta</h2>
 		<h4>Dane osobowe</h4>
