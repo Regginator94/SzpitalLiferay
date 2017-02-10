@@ -241,7 +241,7 @@ $( function() {
 				<tr>
 				  <td>
 	              	<form>
-					  <label for="Goraczkujacy">Gorączkujący</label>
+					  <label for="Goraczkujacy"></label>
 					  <select name="Goraczkujacy" id="Goraczkujacy">
 					    <option>pacjent 1</option>
 					    <option>pacjent 2</option>

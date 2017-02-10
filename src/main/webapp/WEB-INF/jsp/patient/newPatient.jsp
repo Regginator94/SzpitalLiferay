@@ -43,7 +43,7 @@
 		        <form:errors path="idNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="sex">Plec (K/M)</form:label></td>
+		        <td><form:label path="sex">Płeć (K/M)</form:label></td>
 		        <td><form:input path="sex" pattern="[KM]{1}" title="Litera K lub litera M" required="true" />
 		        <form:errors path="sex" class="text-danger"/></td>
 		    </tr>
