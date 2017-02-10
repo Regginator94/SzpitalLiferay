@@ -18,12 +18,12 @@
 		        <td><form:input path="id" pattern="[1-9]{1}[0-9]{0,}" title="Poprawny ID"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="name">Imie</form:label></td>
-		        <td><form:input path="name" title="Poprawne imie" required="true" />
+		        <td><form:label path="name">Imię</form:label></td>
+		        <td><form:input path="name" title="Poprawne imię" required="true" />
 		        <form:errors path="name" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="secondName">Drugie imie</form:label></td>
+		        <td><form:label path="secondName">Drugie imię</form:label></td>
 		        <td><form:input path="secondName" /></td>
 		    </tr>
 		    <tr>
@@ -62,7 +62,7 @@
 		        <form:errors path="insuranceNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="homeAddress">Adres (miejscowosc, ulica, nr domu)</form:label></td>
+		        <td><form:label path="homeAddress">Adres (miejscowość, ulica, nr domu)</form:label></td>
 		        <td><form:textarea path="homeAddress" rows="2" style="resize:none;" title="Poprawny adres" required="true"/>
 		        <form:errors path="homeAddress" class="text-danger"/></td>
 		    </tr>
@@ -88,7 +88,7 @@
 		    </tr>
 		    <tr>
 		        <td colspan="2">
-		            <form:input class="submit" path="" type="submit" value="Wyslij"></form:input>
+		            <form:input class="submit" path="" type="submit" value="Wyślij"></form:input>
 		        </td>
 		    </tr>
 		</table>

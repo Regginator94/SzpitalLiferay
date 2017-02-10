@@ -19,7 +19,7 @@
 		        <td><form:select path="patientShortInfoId" items="${patientIdList}" /></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="reason">Powod wypisania pacjenta</form:label></td>
+		        <td><form:label path="reason">Powód wypisania pacjenta</form:label></td>
 		        <td><form:select path="reason" items="${reasonList}" /></td>
 		    </tr>
 		    <tr>
@@ -28,7 +28,7 @@
 		    </tr>
 		    <tr>
 		        <td colspan="2">
-		            <form:input class="submit" path="" type="submit" value="Wyslij"></form:input>
+		            <form:input class="submit" path="" type="submit" value="Wyślij"></form:input>
 		        </td>
 		    </tr>
 		</table>

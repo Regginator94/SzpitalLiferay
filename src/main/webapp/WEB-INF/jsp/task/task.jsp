@@ -54,7 +54,7 @@
 						<button type="button" class="btn btn-primary" id="add-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
   							+
 						</button>
-						<div id="delete-div">Przeciagnij tu by usunac.</div>
+						<div id="delete-div">Przeciągnij tu, by usunąć.</div>
     					<div><div style="clear:both;"></div> 
        					</div>      
 					</div>
@@ -92,7 +92,7 @@
 			                    <span></span>
 			                </label>
 			                <label for="fancy-checkbox-warning" class="[ btn btn-default ]" >
-			                    Podwyzszony
+			                    Podwyższony
 			                </label>
 			            </div>
 			        </div>

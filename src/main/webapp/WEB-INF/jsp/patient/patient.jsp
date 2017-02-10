@@ -23,7 +23,7 @@ $(document).ready(function(){
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Imie</th>
+						<th>Imię</th>
 						<th>Nazwisko</th> 
 						<th>Data urodzenia</th>
 						<th>PESEL</th>

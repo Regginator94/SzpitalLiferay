@@ -30,17 +30,17 @@ $(document).ready(function(){
 		<div class="left">
 		<h2>Karta pacjenta</h2>
 		<h4>Dane osobowe</h4>
-		<p>Imię i nazwisko: ${patientFullInfo.name} ${patientFullInfo.surname}</p>
+		<p>Imię i nazwisko: ${patientFullInfo.name} ${patientFullInfo.surname}</p>
 		<p>Data urodzenia: ${patientFullInfo.bornDate}</p>
 		<p>PESEL: ${patientFullInfo.idNumber}</p>
 		<p>Adres zamieszkania: ${patientFullInfo.homeAddress}</p>
 		<p>Numer ubezpieczenia: ${patientFullInfo.insuranceNumber}</p>
 		<h4>Obecny stan pacjenta</h4>
 		<p>${patientFullInfo.healthStatus}</p>
-		Zmien stan pacjenta:
+		Zmień stan pacjenta:
 		<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
 		<form:select path="healthStatus" items="${healthStatusList}" />
-		<form:input class="submit" path="" type="submit" value="Zmien stan"></form:input>
+		<form:input class="submit" path="" type="submit" value="Zmień stan"></form:input>
 		</form:form>
 		<h4>Stwierdzona choroba</h4>
 		<p>${patientFullInfo.disease}</p>
@@ -61,12 +61,12 @@ $(document).ready(function(){
 		<a href="${showPatientListURL}"><div class="back"></div></a>
 		</div>
 		<div class="right">
-		<h4>Aktywnosci</h4>
+		<h4>Aktywności</h4>
 		<table id="sort" class="table table-condensed table-stripped table-bordered">	
 				<thead>
 					<tr>
 						<th>Data</th>
-						<th>Aktywnosc</th> 
+						<th>Aktywność</th> 
 					</tr>
 				</thead>
 					<tbody>
@@ -78,11 +78,11 @@ $(document).ready(function(){
 						</c:forEach>
 					</tbody>
 			</table>
-			Dodaj nowa aktywnosc i dodatkowe informacje:
+			Dodaj nową aktywność i dodatkowe informacje:
 			<form:form method="post" modelAttribute="activity" action="${showActivityAddedURL}">
 			<form:select path="activityType" items="${activityTypeList}" />
 			<form:input path="additionalInfo" />
-			<form:input class="submit" path="" type="submit" value="Dodaj aktywnosc"></form:input>
+			<form:input class="submit" path="" type="submit" value="Dodaj aktywność"></form:input>
 			</form:form>
 					
 			</div>
