@@ -20,239 +20,80 @@ $( function() {
         <td><input type="text" id="datepicker"></td>
         <td></td>
         <td>
-        	<form>
-			  <label for="raportType">Rodzaj raportu:</label>
-			  <select name="raportType" id="raportType">
-			    <option>Ranny</option>
+		        <form:label path="raportList">Rodzja raportu</form:label>
+		        <form:select path="raportList" items="${raportList}" />
+		</td>
 			    <option>Popołudniowy</option>
-			    <option>Nocny</option>
-			  </select>
-			</form>
 </table>	
 <table class="table table-condensed"> 		
 	<thead>
 		<tr>
-			<th width="10%">Numer wpisu</th>
-			<th width="20%">Statystyka</th>
 			<th width="30%">Dane indentyfikujące pacjenta</th> 
-			<th width="40%">Opis zdarzenia</th>
+			<th width="40%">Opis aktywności</th>
+			<th>Dodatkowe informacje</th>
 		</tr>
 	</thead>
 	<tr>
-		<td width="10%">1 </td>
-		<td width="20%"> 
-			<table class="table table-condensed">
-            <tr>
-              <td>
-              	<form>
 				  <label for="Przyjeto">Przyjęto:</label>
-				  <select name="Przyjeto" id="Przyjeto">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-			<tr>
-              <td>
-              	<form>
-				  <label for="Wypisano">Wypisano:</label>
-				  <select name="Wypisano" id="Wypisano">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>            
-            <tr>
-              <td>
-              	<form>
 				  <label for="Zmarlo">Zmarło:</label>
-				  <select name="Zmarlo" id="Zmarlo">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-            <tr>
-              <td>
-              	<form>
 				  <label for="Goraczkujacy">Gorączkujący:</label>
-				  <select name="Goraczkujacy" id="Goraczkujacy">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-          </table>
 		</td>
 		<td>
 			<table class="table table-condensed">
 				<tr>
-				  <td>
-	              	<form>
-					  <label for="Goraczkujacy"></label>
-					  <select name="Goraczkujacy" id="Goraczkujacy">
-					    <option>pacjent 1</option>
-					    <option>pacjent 2</option>
-					    <option>pacjent 4</option>
-					  </select>
-					</form>
-	              </td>
+			        <tr><form:select path="patientList" id= "selectId" items="${patientList}" /></tr>
                </tr>
 			</table>
 		</td>
 		<td><textarea rows="4" cols="50"></textarea></td>
+		<td></td>
 	</tr>
 		<tr>
-		<td width="10%">2 </td>
-		<td width="20%"> 
-			<table class="table table-condensed">
-            <tr>
-              <td>
-              	<form>
 				  <label for="Przyjeto">Przyjęto:</label>
-				  <select name="Przyjeto" id="Przyjeto">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-			<tr>
-              <td>
-              	<form>
-				  <label for="Wypisano">Wypisano:</label>
-				  <select name="Wypisano" id="Wypisano">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>            
-            <tr>
-              <td>
-              	<form>
 				  <label for="Zmarlo">Zmarło:</label>
-				  <select name="Zmarlo" id="Zmarlo">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-            <tr>
-              <td>
-              	<form>
 				  <label for="Goraczkujacy">Gorączkujący:</label>
-				  <select name="Goraczkujacy" id="Goraczkujacy">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-          </table>
 		</td>
 		<td>
 			<table class="table table-condensed">
 				<tr>
-				  <td>
-	              	<form>
-					  <label for="Goraczkujacy"></label>
-					  <select name="Goraczkujacy" id="Goraczkujacy">
-					    <option>pacjent 1</option>
-					    <option>pacjent 2</option>
-					    <option>pacjent 4</option>
-					  </select>
-					</form>
-	              </td>
+			        <tr><form:select path="patientList" id= "selectId"  items="${patientList}" /></tr>
                </tr>
 			</table>
 		</td>
 		<td><textarea rows="4" cols="50"></textarea></td>
+		<td></td>
 	</tr>
 		<tr>
-		<td width="10%">3 </td>
-		<td width="20%"> 
-			<table class="table table-condensed">
-            <tr>
-              <td>
-              	<form>
 				  <label for="Przyjeto">Przyjęto:</label>
-				  <select name="Przyjeto" id="Przyjeto">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-			<tr>
-              <td>
-              	<form>
-				  <label for="Wypisano">Wypisano:</label>
-				  <select name="Wypisano" id="Wypisano">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>            
-            <tr>
-              <td>
-              	<form>
 				  <label for="Zmarlo">Zmarło:</label>
-				  <select name="Zmarlo" id="Zmarlo">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-            <tr>
-              <td>
-              	<form>
 				  <label for="Goraczkujacy">Gorączkujący</label>
-				  <select name="Goraczkujacy" id="Goraczkujacy">
-				    <option>0</option>
-				    <option>1</option>
-				    <option>2</option>
-				  </select>
-				</form>
-              </td>
-            </tr>
-          </table>
 		</td>
 		<td>
 			<table class="table table-condensed">
 				<tr>
-				  <td>
-	              	<form>
-					  <label for="Goraczkujacy"></label>
-					  <select name="Goraczkujacy" id="Goraczkujacy">
-					    <option>pacjent 1</option>
-					    <option>pacjent 2</option>
-					    <option>pacjent 4</option>
-					  </select>
-					</form>
-	              </td>
+			        <tr><form:select path="patientList" id= "selectId" items="${patientList}" /></tr>
                </tr>
 			</table>
 		</td>
 		<td><textarea rows="4" cols="50"></textarea></td>
+		<td></td>
 	</tr>
 </table>	
 <%@include file="/WEB-INF/jsp/footer.jsp"%>
+
+<script type="text/javascript">
+$("#selectId").on('change', function() {
+	    $.ajax({
+        action: "addActivities",
+        type: "POST",
+        data: JSON.stringify({"id":this.value}),
+        dataType: "json",
+        traditional: true,
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+           
+        }
+    });
+})
+</script>
+

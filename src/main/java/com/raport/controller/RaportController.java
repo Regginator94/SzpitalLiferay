@@ -3,18 +3,28 @@ package com.raport.controller;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.modul_pacjenta.model.DischargedPatient;
+import com.modul_pacjenta.model.PatientShortInfo;
 import com.modules.ModelAndViewUtils;
 import com.raport.dao.impl.RaportDAOImpl;
 
@@ -41,27 +51,30 @@ public class RaportController {
 	public ModelAndView index(Integer messageCodeOrNull) {
 		ModelAndView modelAndView = ModelAndViewUtils
 				.createModelAndView("raport");
-		if (messageCodeOrNull != null) {
-			List<String> messages = new ArrayList<String>(1);
-			List<String> errors = new ArrayList<String>(1);
-			switch (messageCodeOrNull) {
-			case 1:
-				messages.add("submitSampleForm Success.");
-				break;
-			case 2:
-				errors.add("submitSampleForm Failed.");
-				break;
-			default:
-				break;
-
-			}
-
-			if (messages.size() > 0)
-				modelAndView.addObject("messages", messages);
-			if (errors.size() > 0)
-				modelAndView.addObject("errors", errors);
+		Map<String,String> raportList = new LinkedHashMap<String,String>();
+		raportList.put("Poranny", "Poranny");
+		raportList.put("Dzienny", "Dzienny");
+		raportList.put("Nocny", "Nocny");
+		List<PatientShortInfo> patientShortInfoList = dao.getPatientShortInfo();
+		Map<Integer,String> patientIdList = new LinkedHashMap<Integer,String>();
+		for (PatientShortInfo patient : patientShortInfoList) {
+			String patientIdAndFullName = "" + patient.getId() + ", " + patient.getName() + " " + 
+				patient.getSecondName() + " " + patient.getSurname();
+			patientIdList.put(Integer.valueOf(patient.getId()), patientIdAndFullName);
 		}
+		DischargedPatient dischargedPatientForm = new DischargedPatient();
+        modelAndView.addObject("dischargedPatientForm", dischargedPatientForm);
+        modelAndView.addObject("patientList", patientIdList);
+        modelAndView.addObject("raportList", raportList);
 	
 		return modelAndView;
 	}
+    
+    @ActionMapping(params = "action=addActivities") 
+	public void showDischargedPatientFormSubmitted(ActionRequest request, ActionResponse response, Model model, DischargedPatient dischargedPatientForm, BindingResult result) {
+		System.out.println(request.getParameter("id"));
+		System.out.println(request.getParameter("yeeeeeeeyys"));
+    	//response.addProperty(arg0, arg1);
+	}
+    
 }
