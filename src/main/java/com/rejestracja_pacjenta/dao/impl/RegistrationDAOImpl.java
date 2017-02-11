@@ -37,16 +37,21 @@ public class RegistrationDAOImpl {
 		public void insertPatientShortInfo(PatientShortInfo patient) throws DataAccessException {
 			jdbcTemplate.update(
 			        "INSERT INTO patient (id, name, second_name, surname, born_date, id_number, "
-					+ "sex, phone_number, nationality, insurance_number) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+					+ "sex, phone_number, nationality, insurance_number, home_address, health_status, "
+					+ "disease, medicines, allergies) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 					patient.getId(), patient.getName(), patient.getSecondName(), patient.getSurname(),
 					patient.getBornDate(), patient.getIdNumber(), patient.getSex(), patient.getPhoneNumber(),
-					patient.getNationality(), patient.getInsuranceNumber());
+					patient.getNationality(), patient.getInsuranceNumber(), patient.getHomeAddress(),
+					patient.getHealthStatus(), patient.getDisease(), patient.getMedicines(), patient.getAllergies());
 		}
 		
 		public void insertPatientRegistrationDetails(PatientShortInfo patient) throws DataAccessException {
 			jdbcTemplate.update(
 			        "INSERT INTO registration_details (id, registration_datetime) values (?, NOW())",
 			        patient.getId());
+			jdbcTemplate.update(
+			        "INSERT INTO activities (patient_id, activity_type, activity_datetime) values (?, ?, NOW())",
+			        patient.getId(), "Rejestracja pacjenta");
 		}
 	
 }

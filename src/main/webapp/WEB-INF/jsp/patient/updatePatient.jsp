@@ -19,12 +19,12 @@
 		        <td><form:input path="id" value="${currentPatientShortInfo.id}" readonly="true" /></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="name">Imie</form:label></td>
+		        <td><form:label path="name">Imię</form:label></td>
 		        <td><form:input path="name" value="${currentPatientShortInfo.name}" required="true" />
 		        <form:errors path="name" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="secondName">Drugie imie</form:label></td>
+		        <td><form:label path="secondName">Drugie imię</form:label></td>
 		        <td><form:input path="secondName" value="${currentPatientShortInfo.secondName}" /></td>
 		    </tr>
 		    <tr>
@@ -43,7 +43,7 @@
 		        <form:errors path="idNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="sex">Plec (K/M)</form:label></td>
+		        <td><form:label path="sex">Płeć (K/M)</form:label></td>
 		        <td><form:input path="sex" value="${currentPatientShortInfo.sex}" pattern="[KM]{1}" title="Litera K lub litera M" required="true" />
 		        <form:errors path="sex" class="text-danger"/></td>
 		    </tr>
@@ -63,8 +63,13 @@
 		        <form:errors path="insuranceNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
+		        <td><form:label path="homeAddress">Adres (miejscowość, ulica, nr domu)</form:label></td>
+		        <td><form:input path="homeAddress" value="${currentPatientShortInfo.homeAddress}" title="Poprawny adres" required="true" />
+		        <form:errors path="homeAddress" class="text-danger"/></td>
+		    </tr>
+		    <tr>
 		        <td colspan="2">
-		            <form:input class="submit" path="" type="submit" value="Wyslij"></form:input>
+		            <form:input class="submit" path="" type="submit" value="Wyślij"></form:input>
 		        </td>
 		    </tr>
 		</table>

@@ -23,7 +23,7 @@ $(document).ready(function(){
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Imie</th>
+						<th>Imię</th>
 						<th>Nazwisko</th> 
 						<th>Data urodzenia</th>
 						<th>PESEL</th>
@@ -34,7 +34,11 @@ $(document).ready(function(){
 					<tbody>
 						<c:forEach items="${patientShortInfoList}" var="shortInfo">
 							<tr>
-								<td>${shortInfo.id}</td>
+								<portlet:renderURL var="KartaPacjenta">
+												<portlet:param name="action" value="showPatientCard" />
+												<portlet:param name="id" value="${shortInfo.id}" />
+								</portlet:renderURL>
+								<td><a href="${KartaPacjenta}">${shortInfo.id}</a></td>
 								<td>${shortInfo.name}</td>
 								<td>${shortInfo.surname}</td>
 								<td>${shortInfo.bornDate}</td>					

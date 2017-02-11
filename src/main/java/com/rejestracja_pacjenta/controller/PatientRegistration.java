@@ -2,6 +2,8 @@ package com.rejestracja_pacjenta.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -46,6 +48,11 @@ public class PatientRegistration {
     public String showPatientForm(RenderRequest request, RenderResponse response, Model model) {
         PatientShortInfo patientForm = new PatientShortInfo();    
         model.addAttribute("patientForm", patientForm);
+        Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
+        healthStatusList.put("Stabilny", "Stabilny");
+        healthStatusList.put("Ciezki", "Ciezki");
+        healthStatusList.put("Agonalny", "Agonalny");
+        model.addAttribute("healthStatusList", healthStatusList);
         return "newPatient";
     }
     

@@ -5,11 +5,14 @@ import java.util.Date;
 public class PatientShortInfo extends Person{
 	
 	private int insuranceNumber;
+	private String healthStatus;
+	private String disease;
+	private String medicines;
+	private String allergies;
 		
 	public PatientShortInfo(int id, String name, String secondName,
 			String surname, Date bornDate, long idNumber, String sex,
-			String phoneNumber, String nationality, HomeAddress homeAddress,
-			int insuranceNumber) {
+			String phoneNumber, String nationality, int insuranceNumber, String homeAddress) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -20,13 +23,14 @@ public class PatientShortInfo extends Person{
 		this.sex = sex;
 		this.phoneNumber = phoneNumber;
 		this.nationality = nationality;
-		this.homeAddress = homeAddress;
 		this.insuranceNumber = insuranceNumber;
+		this.homeAddress = homeAddress;
 	}
 
 	public PatientShortInfo(int id, String name, String secondName, String surname,
 			Date bornDate, long idNumber, String sex, String phoneNumber,
-			String nationality, int insuranceNumber ) {
+			String nationality, int insuranceNumber, String homeAddress,
+			String healthStatus, String disease, String medicines, String allergies) {
 		this.id = id;
 		this.name = name;
 		this.secondName = secondName;
@@ -37,6 +41,11 @@ public class PatientShortInfo extends Person{
 		this.phoneNumber = phoneNumber;
 		this.nationality = nationality;
 		this.insuranceNumber = insuranceNumber;
+		this.homeAddress = homeAddress;
+		this.healthStatus = healthStatus;
+		this.disease = disease;
+		this.medicines = medicines;
+		this.allergies = allergies;
 	}
 	
 	public PatientShortInfo() {
@@ -116,11 +125,11 @@ public class PatientShortInfo extends Person{
 		this.nationality = nationality;
 	}
 
-	public HomeAddress getHomeAddress() {
+	public String getHomeAddress() {
 		return homeAddress;
 	}
 
-	public void setHomeAddress(HomeAddress homeAddress) {
+	public void setHomeAddress(String homeAddress) {
 		this.homeAddress = homeAddress;
 	}
 
@@ -130,6 +139,38 @@ public class PatientShortInfo extends Person{
 
 	public void setInsuranceNumber(int insuranceNumber) {
 		this.insuranceNumber = insuranceNumber;
+	}
+
+	public String getHealthStatus() {
+		return healthStatus;
+	}
+
+	public void setHealthStatus(String healthStatus) {
+		this.healthStatus = healthStatus;
+	}
+
+	public String getDisease() {
+		return disease;
+	}
+
+	public void setDisease(String disease) {
+		this.disease = disease;
+	}
+
+	public String getMedicines() {
+		return medicines;
+	}
+
+	public void setMedicines(String medicines) {
+		this.medicines = medicines;
+	}
+
+	public String getAllergies() {
+		return allergies;
+	}
+
+	public void setAllergies(String allergies) {
+		this.allergies = allergies;
 	}
 
 	@Override

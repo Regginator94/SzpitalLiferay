@@ -5,13 +5,17 @@
 	
 	<bean
 		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	<property name="defaultLocale" value="pl"/>
+	</bean>
 
 	<bean id="DataSourceGlobal" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close" scope="singleton">
 		<property name="driverClass"
 			value="com.mysql.jdbc.Driver"  />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://mysql591.cp.az.pl/db1198963_hospital" />
+			value="jdbc:mysql://mysql591.cp.az.pl/db1198963_hospital?useUnicode=true&amp;characterEncoding=utf-8" />
+
 		<property name="user"
 			value="u1198963_xartez"/>
 		<property name="password"
