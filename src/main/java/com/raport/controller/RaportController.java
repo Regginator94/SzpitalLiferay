@@ -1,9 +1,9 @@
 package com.raport.controller;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +23,9 @@ import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.modul_pacjenta.model.DischargedPatient;
+import com.modul_pacjenta.model.Activity;
+import com.modul_pacjenta.model.PatientSend;
+import com.modul_pacjenta.model.PatientShort;
 import com.modul_pacjenta.model.PatientShortInfo;
 import com.modules.ModelAndViewUtils;
 import com.raport.dao.impl.RaportDAOImpl;
@@ -55,15 +57,16 @@ public class RaportController {
 		raportList.put("Poranny", "Poranny");
 		raportList.put("Dzienny", "Dzienny");
 		raportList.put("Nocny", "Nocny");
+		PatientSend patientSend = new PatientSend();
 		List<PatientShortInfo> patientShortInfoList = dao.getPatientShortInfo();
-		Map<Integer,String> patientIdList = new LinkedHashMap<Integer,String>();
+		LinkedList<PatientShort> patientIdList = new LinkedList<PatientShort>();
 		for (PatientShortInfo patient : patientShortInfoList) {
 			String patientIdAndFullName = "" + patient.getId() + ", " + patient.getName() + " " + 
 				patient.getSecondName() + " " + patient.getSurname();
-			patientIdList.put(Integer.valueOf(patient.getId()), patientIdAndFullName);
+			PatientShort patient1 =  new PatientShort(Integer.valueOf(patient.getId()), patientIdAndFullName);
+			patientIdList.add(patient1);
 		}
-		DischargedPatient dischargedPatientForm = new DischargedPatient();
-        modelAndView.addObject("dischargedPatientForm", dischargedPatientForm);
+        modelAndView.addObject("patientSend", patientSend);
         modelAndView.addObject("patientList", patientIdList);
         modelAndView.addObject("raportList", raportList);
 	
@@ -71,10 +74,10 @@ public class RaportController {
 	}
     
     @ActionMapping(params = "action=addActivities") 
-	public void showDischargedPatientFormSubmitted(ActionRequest request, ActionResponse response, Model model, DischargedPatient dischargedPatientForm, BindingResult result) {
-		System.out.println(request.getParameter("id"));
-		System.out.println(request.getParameter("yeeeeeeeyys"));
-    	//response.addProperty(arg0, arg1);
+	public void showDischargedPatientFormSubmitted(ActionRequest request, ActionResponse response, Model model, PatientSend patientSend, BindingResult result) {
+    	Activity activity = dao.patientActivity(3);
+		System.out.println("TEST"+activity);
+		model.addAttribute("activities", activity);
 	}
     
 }

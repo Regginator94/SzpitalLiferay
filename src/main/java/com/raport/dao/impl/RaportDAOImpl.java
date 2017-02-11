@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.modul_pacjenta.model.Activity;
 import com.modul_pacjenta.model.PatientShortInfo;
 
 @Service("RaportDAO")
@@ -50,10 +51,29 @@ public class RaportDAOImpl {
 				PatientShortInfo patient = new PatientShortInfo(rs.getInt(1), rs.getString(2), rs.getString(3), 
 						rs.getString(4), rs.getDate(5), rs.getLong(6), rs.getString(7),
 						rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11));
-				System.out.println(patient);
 				return patient ;
 			}			
 		});
 	}
 	
+	
+//	SELECT concat(patient.name, " ", patient.surname) as patient, activity_type, additional_info, activity_datetime FROM 
+//	`activities` join patient on patient_id = patient.id 
+//	where activity_datetime > NOW() - INTERVAL 8 HOUR order by activity_datetime asc
+	
+	public Activity patientActivity(int patientId)throws DataAccessException{
+		Activity patient = jdbcTemplate.queryForObject("SELECT concat(patient.name,\"\" , patient.surname) as patient, activity_type, additional_info, "
+				+ "activity_datetime FROM `activities` join patient on "
+				+ "patient_id = patient.id where id = ? AND activity_datetime > NOW() - INTERVAL 8 HOUR order by activity_datetime asc",
+				new RowMapper<Activity>(){
+			public Activity mapRow(ResultSet rs, int rowNumber)
+					throws SQLException {
+				return  new Activity(rs.getString(1), rs.getString(2), rs.getString(3), 
+						rs.getDate(4));
+			}
+
+		}, new Object[] { patientId });	
+		
+		return patient;
+	}
 }
