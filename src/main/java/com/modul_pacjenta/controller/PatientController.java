@@ -95,7 +95,7 @@ public class PatientController {
         model.addAttribute("patientForm", patientForm);
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
-        healthStatusList.put("Ciezki", "Ciezki");
+        healthStatusList.put("Ciężki", "Ciężki");
         healthStatusList.put("Agonalny", "Agonalny");
         model.addAttribute("healthStatusList", healthStatusList);
         return "newPatient";
@@ -175,7 +175,7 @@ public class PatientController {
     	model.addAttribute("updatedPatient", updatedPatient);
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
-        healthStatusList.put("Ciezki", "Ciezki");
+        healthStatusList.put("Ciężki", "Ciężki");
         healthStatusList.put("Agonalny", "Agonalny");
         model.addAttribute("healthStatusList", healthStatusList);
 
@@ -185,13 +185,13 @@ public class PatientController {
 		
 		Map<String,String> activityTypeList = new LinkedHashMap<String,String>();
 		activityTypeList.put("Zabieg", "Zabieg");
-		activityTypeList.put("Podanie lekow (rano)", "Podanie lekow (rano)");
-		activityTypeList.put("Podanie lekow (poludnie)", "Podanie lekow (poludnie)");
-		activityTypeList.put("Podanie lekow (popoludnie)", "Podanie lekow (popoludnie)");
-		activityTypeList.put("Podanie lekow (wieczor)", "Podanie lekow (wieczor)");
-		activityTypeList.put("Podanie posilku (sniadanie)", "Podanie posilku (sniadanie)");
-		activityTypeList.put("Podanie posilku (obiad)", "Podanie posilku (obiad)");
-		activityTypeList.put("Podanie posilku (kolacja)", "Podanie posilku (kolacja)");
+		activityTypeList.put("Podanie leków (rano)", "Podanie leków (rano)");
+		activityTypeList.put("Podanie leków (południe)", "Podanie leków (południe)");
+		activityTypeList.put("Podanie leków (popołudnie)", "Podanie leków (popołudnie)");
+		activityTypeList.put("Podanie leków (wieczor)", "Podanie leków (wieczor)");
+		activityTypeList.put("Podanie posiłku (śniadanie)", "Podanie posiłku (śniadanie)");
+		activityTypeList.put("Podanie posiłku (obiad)", "Podanie posiłku (obiad)");
+		activityTypeList.put("Podanie posiłku (kolacja)", "Podanie posiłku (kolacja)");
         model.addAttribute("activityTypeList", activityTypeList);
     	
         Activity activity = new Activity();

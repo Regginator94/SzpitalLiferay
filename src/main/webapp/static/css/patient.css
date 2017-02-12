@@ -31,6 +31,30 @@
 	margin:5px 5px 5px 5px;
 }
 
+#section-3 {
+	padding: 20px;
+	margin-left: 5px;
+}
+
+.divided-section {
+	background: rgba(158, 158, 158, 0.1);
+	border-radius: 5px;
+
+}
+
+.text-style {		
+	padding: 10px 10px 0px 0px;
+	margin-left: 20px;
+	color: white !important;
+	font-style: italic;
+}
+
+.text-style2 {
+	display: inline-block;
+	padding-left: 20px;
+	padding-top: -20px;
+	padding-bottom: 10px; 
+}
 .modify-patient {
 	background: url(../img/modify-patient.png) no-repeat;
 	width: 3vh;
