@@ -30,7 +30,7 @@ $(document).ready(function(){
 		<div class="left">
 		<h2>Karta pacjenta</h2>
 		<h4>Dane osobowe</h4>
-		<p>Imię i nazwisko: ${patientFullInfo.name} ${patientFullInfo.surname}</p>
+		<p>Imię i nazwisko: ${patientFullInfo.name} ${patientFullInfo.surname}</p>
 		<p>Data urodzenia: ${patientFullInfo.bornDate}</p>
 		<p>PESEL: ${patientFullInfo.idNumber}</p>
 		<p>Adres zamieszkania: ${patientFullInfo.homeAddress}</p>
@@ -94,7 +94,7 @@ $(document).ready(function(){
 			<form:form method="post" modelAttribute="activity" action="${showActivityAddedURL}">
 			<form:select path="activityType" items="${activityTypeList}" />
 			<form:input path="additionalInfo" />
-			<form:input class="submit" path="" type="submit" value="Dodaj aktywność"></form:input>
+			<form:input class="submit" path="" type="submit" value="Dodaj aktywność"></form:input>
 			</form:form>
 					
 			</div>
