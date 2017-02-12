@@ -43,14 +43,14 @@
 		<button type="button" class="btn btn-primary" id="zadania-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
   							Zadania
 						</button>
-		<div id ="zadania" class="hidden" align="center" >
+		<div id ="zadania"  align="center" >
 		<div class="header" >
 			<div class="task-container" >
                 	<div class="task-list">
                 		<h3>Zadania</h3>
-	                	<div class="task-status" id="pending">_____________________</div>
-	             		<div class="task-status" id="inProgress">_____________________</div>
-						<div class="task-status" id="completed">_____________________</div>
+	                	<div class="task-status" id="pending">Nie rozpoczęte</div>
+	             		<div class="task-status" id="inProgress">W trakcie</div>
+						<div class="task-status" id="completed">Zakończone</div>
 						<button type="button" class="btn btn-primary" id="add-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
   							+
 						</button>
@@ -133,23 +133,22 @@ $(document).ready(function(){
 		if(($(this).is('.enabled')) ) {
 			$('#add-container').toggleClass('hidden');
 		 }
-		
 		else {
 			$('#add-container').removeClass('hidden');	
 		}   
 		$(this).toggleClass('enabled');   
 		$('#add-container').toggleClass('task-list');
 	});
+	
 	$("#zadania-btn").click(function () {	
-		if(($(this).is('.enabled')) ) {
-			$('#zadania').toggleClass('hidden');
+		if(($(this).is('.on')) ) {
+			$('#zadania').removeClass('hidden');
 		 }
 		
 		else {
-			$('#zadania').removeClass('hidden');	
+			$('#zadania').toggleClass('hidden');	
 		}   
-		$(this).toggleClass('enabled');   
-		
+		$(this).toggleClass('on');   
 	});
 	  
 			$("#fancy-checkbox-info").click( function () {
@@ -163,7 +162,6 @@ $(document).ready(function(){
 		}
 		$('#fancy-checkbox-info').toggleClass('active');	 
 	});
-
 	$("#fancy-checkbox-warning").click( function () {
 		if($('#fancy-checkbox-warning').is('.active')) {
 				document.getElementById("fancy-checkbox-danger").removeAttribute("disabled");

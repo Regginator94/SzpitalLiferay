@@ -35,34 +35,46 @@ $(document).ready(function(){
 		<p>PESEL: ${patientFullInfo.idNumber}</p>
 		<p>Adres zamieszkania: ${patientFullInfo.homeAddress}</p>
 		<p>Numer ubezpieczenia: ${patientFullInfo.insuranceNumber}</p>
-		<h4>Obecny stan pacjenta</h4>
-		<p>${patientFullInfo.healthStatus}</p>
-		Zmień stan pacjenta:
-		<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
-		<form:select path="healthStatus" items="${healthStatusList}" />
-		<form:input class="submit" path="" type="submit" value="Zmień stan"></form:input>
-		</form:form>
-		<h4>Stwierdzona choroba</h4>
-		<p>${patientFullInfo.disease}</p>
-		<h4>Przyjmowane leki</h4>
-		<p>${patientFullInfo.medicines}</p>
-		Dodaj nowe leki:
-		<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
-		<form:input path="medicines" />
-		<form:input class="submit" path="" type="submit" value="Dodaj leki"></form:input>
-		</form:form>
-		<h4>Alergie</h4>
-		<p>${patientFullInfo.allergies}</p>
-		Dodaj nowe alergie:
-		<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
-		<form:input path="allergies" />
-		<form:input class="submit" path="" type="submit" value="Dodaj alergie"></form:input>
-		</form:form>
-		<a href="${showPatientListURL}"><div class="back"></div></a>
+		<div id="section-3">
+			<div class="divided-section">
+				<h4 class="text-style"><b>Obecny stan pacjenta:</b></h4><p style="padding-left:40px">${patientFullInfo.healthStatus}</p>
+				<h4 class="text-style">Zmień stan pacjenta</h4>
+					<div style="padding-left: 70px; padding-bottom: 10px;">
+					<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
+					<form:select path="healthStatus" items="${healthStatusList}" />
+					<form:input class="submit" path="" type="submit" value="Zmień stan"></form:input>
+					</form:form>
+					</div>
+				<h4 class="text-style"><b>Stwierdzona choroba:</b></h4>
+			<p style="padding-left:40px">${patientFullInfo.disease}</p>
+			<h4 class="text-style"><b>Przyjmowane leki:</b></h4>
+			<p style="padding-left:40px">${patientFullInfo.medicines}</p>
+			<h4 class="text-style">Podaj nowe leki</h4>
+			<div style="padding-left: 70px; padding-bottom: 10px;">
+				<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
+				<form:input path="medicines" />
+				<form:input class="submit" path="" type="submit" value="Dodaj leki"></form:input>
+				</form:form>
+			</div>
+			<h4 class="text-style"><b>Alergie:</b></h4>
+			<p style="padding-left:40px">${patientFullInfo.allergies}</p>
+			<h4 class="text-style">Dodaj nowe alergie</h4>
+			<div style="padding-left: 70px; padding-bottom: 10px;">
+				<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
+				<form:input path="allergies" />
+				<form:input class="submit" path="" type="submit" value="Dodaj alergie"></form:input>
+				</form:form>
+			</div>
+			<a href="${showPatientListURL}"><div class="back"></div></a>
+				
+			</div>
+			
+			
+		</div>
 		</div>
 		<div class="right">
 		<h4>Aktywności</h4>
-		<table id="sort" class="table table-condensed table-stripped table-bordered">	
+		<table id="sort" class="table table-condensed table-stripped table-bordered" style="background: rgba(158, 158, 158, 0.1);">	
 				<thead>
 					<tr>
 						<th>Data</th>
