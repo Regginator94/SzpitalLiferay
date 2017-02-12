@@ -95,7 +95,7 @@ public class PatientController {
         model.addAttribute("patientForm", patientForm);
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
-        healthStatusList.put("Ci臋偶ki", "Ci臋偶ki");
+        healthStatusList.put("Ci昕ki", "Ci昕ki");
         healthStatusList.put("Agonalny", "Agonalny");
         model.addAttribute("healthStatusList", healthStatusList);
         return "newPatient";
@@ -175,7 +175,7 @@ public class PatientController {
     	model.addAttribute("updatedPatient", updatedPatient);
         Map<String,String> healthStatusList = new LinkedHashMap<String,String>();
         healthStatusList.put("Stabilny", "Stabilny");
-        healthStatusList.put("Ci臋偶ki", "Ci臋偶ki");
+        healthStatusList.put("Ci昕ki", "Ci昕ki");
         healthStatusList.put("Agonalny", "Agonalny");
         model.addAttribute("healthStatusList", healthStatusList);
 
@@ -185,13 +185,13 @@ public class PatientController {
 		
 		Map<String,String> activityTypeList = new LinkedHashMap<String,String>();
 		activityTypeList.put("Zabieg", "Zabieg");
-		activityTypeList.put("Podanie lek贸w (rano)", "Podanie lek贸w (rano)");
-		activityTypeList.put("Podanie lek贸w (po艂udnie)", "Podanie lek贸w (po艂udnie)");
-		activityTypeList.put("Podanie lek贸w (popo艂udnie)", "Podanie lek贸w (popo艂udnie)");
-		activityTypeList.put("Podanie lek贸w (wieczor)", "Podanie lek贸w (wieczor)");
-		activityTypeList.put("Podanie posi艂ku (艣niadanie)", "Podanie posi艂ku (艣niadanie)");
-		activityTypeList.put("Podanie posi艂ku (obiad)", "Podanie posi艂ku (obiad)");
-		activityTypeList.put("Podanie posi艂ku (kolacja)", "Podanie posi艂ku (kolacja)");
+		activityTypeList.put("Podanie lek體 (rano)", "Podanie lek體 (rano)");
+		activityTypeList.put("Podanie lek體 (po硊dnie)", "Podanie lek體 (po硊dnie)");
+		activityTypeList.put("Podanie lek體 (popo硊dnie)", "Podanie lek體 (popo硊dnie)");
+		activityTypeList.put("Podanie lek體 (wiecz髍)", "Podanie lek體 (wiecz髍)");
+		activityTypeList.put("Podanie posi砶u (宯iadanie)", "Podanie posi砶u (宯iadanie)");
+		activityTypeList.put("Podanie posi砶u (obiad)", "Podanie posi砶u (obiad)");
+		activityTypeList.put("Podanie posi砶u (kolacja)", "Podanie posi砶u (kolacja)");
         model.addAttribute("activityTypeList", activityTypeList);
     	
         Activity activity = new Activity();
@@ -226,7 +226,7 @@ public class PatientController {
 	public ModelAndView detailsView(ActionRequest request, ActionResponse response, Model model,
 			@RequestParam(value = "id") int id) {
 		
-		System.out.println("czy wjesz艂o?");
+		System.out.println("czy wesz硂");
 		ModelAndView modelAndView = ModelAndViewUtils
 				.createModelAndView("details");
 		PatientShortInfo patientShortInfo = dao.getPatientShortInfo(id);
