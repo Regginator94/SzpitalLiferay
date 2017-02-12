@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" media="screen"
 	href="<%=request.getContextPath()%>/static/css/patient.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<title>Tabela pacjentow</title>
+<title>Tabela pacjentów</title>
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
 <portlet:actionURL var="showDischargedPatientFormSubmittedURL">
     <portlet:param name="action" value="showDischargedPatientFormSubmitted"/>

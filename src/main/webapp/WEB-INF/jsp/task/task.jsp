@@ -54,7 +54,7 @@
 						<button type="button" class="btn btn-primary" id="add-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
   							+
 						</button>
-						<div id="delete-div">Przeciągnij tu, by usunąć.</div>
+						<div id="delete-div">Przeciągnij tu, by usunął.</div>
     					<div><div style="clear:both;"></div> 
        					</div>      
 					</div>

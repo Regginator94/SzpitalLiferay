@@ -19,11 +19,11 @@
 		    </tr>
 		    <tr>
 		        <td><form:label path="name">Imię</form:label></td>
-		        <td><form:input path="name" title="Poprawne imię" required="true" />
+		        <td><form:input path="name" title="Poprawne imiÄ" required="true" />
 		        <form:errors path="name" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="secondName">Drugie imię</form:label></td>
+		        <td><form:label path="secondName">Drugie imię</form:label></td>
 		        <td><form:input path="secondName" /></td>
 		    </tr>
 		    <tr>
@@ -42,7 +42,7 @@
 		        <form:errors path="idNumber" class="text-danger"/></td>
 		    </tr>
 		    <tr>
-		        <td><form:label path="sex">Plec (K/M)</form:label></td>
+		        <td><form:label path="sex">Płeć (K/M)</form:label></td>
 		        <td><form:input path="sex" pattern="[KM]{1}" title="Litera K lub litera M" required="true" />
 		        <form:errors path="sex" class="text-danger"/></td>
 		    </tr>
@@ -88,7 +88,7 @@
 		    </tr>
 		    <tr>
 		        <td colspan="2">
-		            <form:input class="submit" path="" type="submit" value="Wyślij"></form:input>
+		            <form:input class="submit" path="" type="submit" value="WyÅlij"></form:input>
 		        </td>
 		    </tr>
 		</table>

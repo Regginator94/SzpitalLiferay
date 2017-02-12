@@ -1,5 +1,6 @@
 package com.raport.controller;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -13,6 +14,7 @@ import javax.portlet.ActionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -75,9 +77,17 @@ public class RaportController {
     
     @ActionMapping(params = "action=addActivities") 
 	public void showDischargedPatientFormSubmitted(ActionRequest request, ActionResponse response, Model model, PatientSend patientSend, BindingResult result) {
-    	Activity activity = dao.patientActivity(3);
-		System.out.println("TEST"+activity);
-		model.addAttribute("activities", activity);
+    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    	Date date = new Date();
+
+    	try{
+    		Activity activity = dao.patientActivity(3);
+    		model.addAttribute("activities", activity);
+    		
+    	} catch( EmptyResultDataAccessException e) {
+    		Activity activit = new Activity("", "Brak aktywności", "", date);
+    		model.addAttribute("activities", activit);
+    	}
 	}
     
 }

@@ -11,11 +11,11 @@
 		        <td>${patientForm.id}</td>
 		    </tr>
 		    <tr>
-		        <td>Imie</td>
+		        <td>Imię</td>
 		        <td>${patientForm.name}</td>
 		    </tr>
 		    <tr>
-		        <td>Drugie imie</td>
+		        <td>Drugie imię</td>
 		        <td>${patientForm.secondName}</td>
    	 		</tr>
    	 		<tr>
@@ -48,6 +48,6 @@
    	 		</tr>
 		</table>
 		<p class="text-center"><a href="newPatient">Zarejestruj innego pacjenta</a></p>
-		<p class="text-center"><a href="../patient/">Lista pacjentow</a></p>  
+		<p class="text-center"><a href="../patient/">Lista pacjentów</a></p>  
 	</div>
 <%@include file="/WEB-INF/jsp/footer.jsp"%>

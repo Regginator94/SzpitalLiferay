@@ -1,10 +1,10 @@
 <%@include file="/WEB-INF/jsp/header.jsp"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<title>Tabela pacjentow</title>
+<title>Tabela pacjentów</title>
 <%@include file="/WEB-INF/jsp/header2.jsp"%>
 	<div class="container" align="center">
-		<h2>Wypis pacjenta ukonczony</h2>
+		<h2>Wypis pacjenta ukończony</h2>
 		<table class="table table-condensed">
 		    <tr>
 		        <td>ID Pacjenta</td>
@@ -20,7 +20,7 @@
 		    </tr>
 		</table>  
 		<p class="text-center"><a href="dischargePatient">Wypisz innego pacjenta</a></p>
-		<p class="text-center"><a href="../patient/">Lista pacjentow</a></p>  
+		<p class="text-center"><a href="../patient/">Lista pacjentów</a></p>  
 		<p class="text-center"><a href="newPatient">Zarejestruj pacjenta</a></p>
 	</div>
 <%@include file="/WEB-INF/jsp/footer.jsp"%>

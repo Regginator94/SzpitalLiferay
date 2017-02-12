@@ -56,7 +56,7 @@ $( function() {
                </form:form>
 			</table>
 		</td>
-		<td><textarea rows="4" cols="50">${activities}</textarea></td>
+		<td><textarea rows="4" cols="50">${activities1}</textarea></td>
 		<td><textarea rows="4" cols="50"></textarea></td>
 	</tr>
 		<tr>
@@ -68,10 +68,11 @@ $( function() {
                </form:form>
 			</table>
 		</td>
-		<td><textarea rows="4" cols="50">${activities}</textarea></td>
+		<td><textarea rows="4" cols="50">${activities2}</textarea></td>
 		<td><textarea rows="4" cols="50"></textarea></td>
 	</tr>
 </table>	
+ <form:input class="submit" path="" type="submit" value="Generuj raport"></form:input>
 <%@include file="/WEB-INF/jsp/footer.jsp"%>
 
 <script type="text/javascript">

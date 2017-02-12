@@ -38,7 +38,7 @@ $(document).ready(function(){
 		<div id="section-3">
 			<div class="divided-section">
 				<h4 class="text-style"><b>Obecny stan pacjenta:</b></h4><p style="padding-left:40px">${patientFullInfo.healthStatus}</p>
-				<h4 class="text-style">Zmień stan pacjenta</h4>
+				<h4 class="text-style">Zmie stan pacjenta</h4>
 					<div style="padding-left: 70px; padding-bottom: 10px;">
 					<form:form method="post" modelAttribute="updatedPatient" action="${showPatientCardUpdatedURL}">
 					<form:select path="healthStatus" items="${healthStatusList}" />
@@ -78,7 +78,7 @@ $(document).ready(function(){
 				<thead>
 					<tr>
 						<th>Data</th>
-						<th>Aktywność</th> 
+						<th>Aktywność</th> 
 					</tr>
 				</thead>
 					<tbody>
@@ -90,7 +90,7 @@ $(document).ready(function(){
 						</c:forEach>
 					</tbody>
 			</table>
-			Dodaj nową aktywność i dodatkowe informacje:
+			Dodaj nową aktywność i dodatkowe informacje:
 			<form:form method="post" modelAttribute="activity" action="${showActivityAddedURL}">
 			<form:select path="activityType" items="${activityTypeList}" />
 			<form:input path="additionalInfo" />
